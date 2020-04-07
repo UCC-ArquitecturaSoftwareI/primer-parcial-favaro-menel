@@ -1,10 +1,10 @@
 ![Build and Deploy][badge]
 # Carreras de Autos
-##Integrantes
+## Integrantes
 **Favaro Juan Cruz**
 **Menel Angelo**
 **Chiletti Emanuel**
-##Descripción
+## Descripción
 Este proyecto es una plantilla básica para crear proyectos en Raylib. Incluye github actions
 para deployear la versión HTML5 del juego en gh-pages del mismo repositorio.
 
