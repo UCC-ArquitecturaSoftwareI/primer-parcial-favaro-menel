@@ -12,6 +12,9 @@ const int screenHeight = 450;
 Music music;
 Nave *player;
 
+Texture2D map;
+int map_x = 0, map_y = 0;
+
 static void UpdateDrawFrame(void);          // Función dedicada a operar cada frame
 
 int main() {
@@ -24,6 +27,7 @@ int main() {
 
     PlayMusicStream(music);
     player = new Nave("resources/ship.png", Vector2{screenWidth / 2, screenHeight / 2});
+    map = LoadTexture("resources/mapa.png");
 
 
 #if defined(PLATFORM_WEB)  // Para versión Web.
@@ -56,10 +60,22 @@ static void UpdateDrawFrame(void) {
     UpdateMusicStream(music);
 
     // Verifico Entradas de eventos.
-    if (IsKeyDown(KEY_RIGHT)) player->move_x(2.0f);
-    if (IsKeyDown(KEY_LEFT)) player->move_x(-2.0f);
-    if (IsKeyDown(KEY_UP)) player->move_y(-2.0f);
-    if (IsKeyDown(KEY_DOWN)) player->move_y(2.0f);
+    if (IsKeyDown(KEY_RIGHT)) {
+        player->move_x(2.0f);
+        map_x -= 3;
+    }
+    if (IsKeyDown(KEY_LEFT)) {
+        player->move_x(-2.0f);
+        map_x += 3;
+    }
+    if (IsKeyDown(KEY_UP)) {
+        player->move_y(-2.0f);
+        map_y += 3;
+    }
+    if (IsKeyDown(KEY_DOWN)) {
+        player->move_y(2.0f);
+        map_y -= 3;
+    }
 
 
     // Comienzo a dibujar
@@ -68,8 +84,8 @@ static void UpdateDrawFrame(void) {
     ClearBackground(RAYWHITE); // Limpio la pantalla con blanco
 
     // Dibujo todos los elementos del juego.
+    DrawTexture(map, map_x, map_y, WHITE);
     player->draw();
-    DrawText("Inicio", 20, 20, 40, LIGHTGRAY);
 
     // Finalizo el dibujado
     EndDrawing();
