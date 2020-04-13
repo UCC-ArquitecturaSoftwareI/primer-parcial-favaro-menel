@@ -26,7 +26,7 @@ int main() {
     music = LoadMusicStream("resources/Cyberpunk Moonlight Sonata.mp3");
 
     PlayMusicStream(music);
-    player = new Nave("resources/ship.png", Vector2{screenWidth / 2, screenHeight / 2});
+    player = new Nave("resources/car_red_3.png", Vector2{screenWidth / 2, screenHeight / 2});
     map = LoadTexture("resources/mapa.png");
 
 
