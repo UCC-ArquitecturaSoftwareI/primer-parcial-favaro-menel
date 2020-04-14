@@ -13,7 +13,7 @@ Music music;
 Nave *player;
 
 Texture2D map;
-int map_x = 0, map_y = 0;
+float map_x = 0, map_y = 0;
 
 static void UpdateDrawFrame(void);          // Función dedicada a operar cada frame
 
@@ -84,7 +84,7 @@ static void UpdateDrawFrame(void) {
     ClearBackground(RAYWHITE); // Limpio la pantalla con blanco
 
     // Dibujo todos los elementos del juego.
-    DrawTexture(map, map_x, map_y, WHITE);
+    DrawTextureEx(map, {map_x, map_y}, 0, 2, WHITE);
     player->draw();
 
     // Finalizo el dibujado
