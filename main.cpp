@@ -1,6 +1,6 @@
 #include <raylib.h>
 
-#include "clases/Nave.h"
+#include "clases/Car.h"
 
 #if defined(PLATFORM_WEB) // Para crear HTML5
 #include <emscripten/emscripten.h>
@@ -10,7 +10,7 @@ const int screenHeight = 450;
 
 // Variables Globales
 Music music;
-Nave *player;
+Car *player;
 
 Texture2D map;
 float map_x = 0, map_y = 0;
@@ -26,7 +26,7 @@ int main() {
     music = LoadMusicStream("resources/Cyberpunk Moonlight Sonata.mp3");
 
     PlayMusicStream(music);
-    player = new Nave("resources/car_red_3.png", Vector2{screenWidth / 2, screenHeight / 2});
+    player = new Car("resources/car_red_3.png", Vector2{screenWidth / 2, screenHeight / 2});
     map = LoadTexture("resources/mapa.png");
 
 
