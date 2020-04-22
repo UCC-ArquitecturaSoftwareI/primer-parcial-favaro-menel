@@ -1,18 +1,25 @@
 #include <raylib.h>
 #include <string>
+#include "Entity.h"
 #ifndef RAYLIBTEMPLATE_NAVE_H
 #define RAYLIBTEMPLATE_NAVE_H
 
 
-class Car {
-    Texture2D car;
-    Vector2 car_pos;
+class Car: public Entity {
 public:
-    Car(std::string text, const Vector2 &carPos);
+    Car();
 
-    void draw();
-    void move_x(float d);
-    void move_y(float d);
+    void move_x(float d) override;
+
+    void move_y(float d) override;
+
+    float getpos_x() override;
+
+    float getpos_y() override;
+
+    void setpos_x(float x) override;
+
+    void setpos_y(float y) override;
 };
 
 

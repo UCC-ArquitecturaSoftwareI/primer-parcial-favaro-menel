@@ -1,12 +1,13 @@
 #include <raylib.h>
 
 #include "clases/Car.h"
+#include "clases/Game.h"
 
 #if defined(PLATFORM_WEB) // Para crear HTML5
 #include <emscripten/emscripten.h>
 #endif
-const int screenWidth = 800;
-const int screenHeight = 450;
+//const int screenWidth = 800;
+//const int screenHeight = 450;
 
 // Variables Globales
 Music music;
@@ -19,15 +20,16 @@ static void UpdateDrawFrame(void);          // Función dedicada a operar cada f
 
 int main() {
     // Inicialización de la ventana
-    InitWindow(screenWidth, screenHeight, "raylib template - advance game");
-    InitAudioDevice();              // Initialize audio device
-
+    //InitWindow(screenWidth, screenHeight, "raylib template - advance game");
+    //InitAudioDevice();              // Initialize audio device
+    Game &play = Game::get();
+    play.Loaddata("resources/Map/map.json");
     /// Ejemplo de utilización de audio.
     music = LoadMusicStream("resources/Cyberpunk Moonlight Sonata.mp3");
 
     PlayMusicStream(music);
     player = new Car("resources/car_red_3.png", Vector2{screenWidth / 2, screenHeight / 2});
-    map = LoadTexture("resources/mapa.png");
+    map = LoadTexture("resources/Map/map.json");
 
 
 #if defined(PLATFORM_WEB)  // Para versión Web.
