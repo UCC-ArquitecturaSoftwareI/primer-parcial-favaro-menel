@@ -4,7 +4,7 @@
 
 
 Car::Car() {
-    text2D = TextureManager::LoadText("resources/car_red_3.png");
+
 }
 
 void Car::move_x(float d) {

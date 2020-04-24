@@ -1,18 +1,20 @@
 #include <raylib.h>
 
-#include "clases/Car.h"
 #include "clases/Game.h"
+#include "clases/Renderer.h"
+#include "clases/LoadData.h"
+
 
 #if defined(PLATFORM_WEB) // Para crear HTML5
 #include <emscripten/emscripten.h>
 #endif
 
-static void UpdateDrawFrame(void);          // Función dedicada a operar cada frame
+//static void UpdateDrawFrame(void);          // Función dedicada a operar cada frame
 
 int main() {
     Game &play = Game::get();
-
-#if defined(PLATFORM_WEB)  // Para versión Web.
+    play.finish();
+/*#if defined(PLATFORM_WEB)  // Para versión Web.
     emscripten_set_main_loop(UpdateDrawFrame, 0, 1);
 #else
     SetTargetFPS(60);   // Set our game to run at 60 frames-per-second
@@ -20,7 +22,7 @@ int main() {
     while (!WindowShouldClose()) {
         UpdateDrawFrame();
     }
-#endif
+#endif*/
 
 }
 
@@ -29,7 +31,7 @@ int main() {
  *  Función dedicada a dibujar cada frame. Acá adentro se debe poner la logica necesaria para representar un nuevo frame
  *  del juego.
  */
-static void UpdateDrawFrame(void) {
+/*static void UpdateDrawFrame(void) {
 
     // siempre hay que reproducir la musica que esta actualmente
     UpdateMusicStream(music);
@@ -64,7 +66,7 @@ static void UpdateDrawFrame(void) {
 
     // Finalizo el dibujado
     EndDrawing();
-}
+}*/
 
 
 

@@ -10,12 +10,10 @@ class Game {
 private:
     int Height = 450;
     int Width = 800;
-
     Game();
 
 public:
     static Game &get();
-
 
     static void finish();
 

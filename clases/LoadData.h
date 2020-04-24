@@ -4,7 +4,7 @@
 
 #include "../Libs/tileson.hpp"
 #include "TextureManager.h"
-#include "Car.h"
+
 
 class LoadData {
 private:
@@ -21,5 +21,9 @@ public:
 
     std::vector<Vector2> LoadEnemies();
 
+    tson::Map &getMap();
 
+    tson::Tileset *getMapTileset();
+
+    TextureManager getTexMan();
 };

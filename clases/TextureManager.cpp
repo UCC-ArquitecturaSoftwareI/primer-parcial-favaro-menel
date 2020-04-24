@@ -16,6 +16,5 @@ void TextureManager::LoadText(const std::string &file, const std::string &key) {
 }
 
 Texture2D TextureManager::search(const std::string &key) {
-    Texture2D t2d = Texturetree[key];
-    return t2d;
+    return Texturetree[key];
 }

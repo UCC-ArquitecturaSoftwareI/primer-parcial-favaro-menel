@@ -4,13 +4,18 @@
 
 #include <string>
 #include <raylib.h>
-#include "../Libs/tileson.hpp"
+#include "LoadData.h"
 
 class Map {
-    tson::Map map;
-    Texture2D map_tex;
-    tson::Tileset *map_tileset;
+    LoadData ld;
+    std::vector<Rectangle> tile_rec;
+    std::vector<Vector2> position;
 public:
-    Map(std::string file);
+    Map();
 
+    LoadData &getLd();
+
+    std::vector<Rectangle> &getTileRec();
+
+    std::vector<Vector2> &getPosition();
 };

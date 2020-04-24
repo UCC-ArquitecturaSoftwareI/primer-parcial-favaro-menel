@@ -4,13 +4,16 @@
 
 #include <string>
 #include <raylib.h>
-#include "LoadData.h"
-
+#include "Map.h"
 class Renderer{
 private:
-    LoadData ld;
+    Map map;
 public:
     Renderer();
 
     void drawmap();
+
+    void drawplayer();
+
+    void drawenemies();
 };

@@ -9,7 +9,7 @@
 
 class TextureManager {
 private:
-    std::map<std::string, Texture2D> Texturetree;
+    std::map<const std::string , Texture2D> Texturetree;
 public:
     TextureManager();
 

@@ -48,6 +48,18 @@ std::vector<Vector2> LoadData::LoadEnemies() {
     return enemy_pos;
 }
 
+tson::Map &LoadData::getMap() {
+    return map;
+}
+
+tson::Tileset *LoadData::getMapTileset(){
+    return map_tileset;
+}
+
+TextureManager LoadData::getTexMan() {
+    return tex_man;
+}
+
 /**
  * Constructor by default.
  */
