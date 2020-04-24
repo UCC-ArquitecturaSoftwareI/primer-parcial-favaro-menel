@@ -6,13 +6,10 @@
 #include <raylib.h>
 #include <iostream>
 
-
 class Game {
 private:
     int Height = 450;
     int Width = 800;
-    bool error = false;
-
 
     Game();
 

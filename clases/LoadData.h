@@ -10,11 +10,16 @@ class LoadData {
 private:
     Texture2D text2D;
     tson::Map map;
-    TextureManager *tex_man;
+    TextureManager tex_man;
     tson::Tileset *map_tileset;
-    Car player;
 public:
     LoadData();
+
     void LoadMap(std::string file);
-    void LoadPlayer();
+
+    Vector2 LoadPlayer();
+
+    std::vector<Vector2> LoadEnemies();
+
+
 };

@@ -4,14 +4,13 @@
 
 #include <string>
 #include <raylib.h>
-#include "TextureManager.h"
-#include "Map.h"
+#include "LoadData.h"
 
-class Renderer : public TextureManager {
+class Renderer{
 private:
-    Map map_tex(txt);
+    LoadData ld;
 public:
     Renderer();
 
-    void LoadText(const char *file);
+    void drawmap();
 };

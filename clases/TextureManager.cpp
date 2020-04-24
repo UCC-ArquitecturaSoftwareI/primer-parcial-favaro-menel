@@ -6,12 +6,16 @@
 TextureManager::TextureManager() = default;
 
 /**
- *  It can load  textures.
+ *  It loads  textures.
  * @param file -> path of the texture.
  */
 
-Texture2D TextureManager::LoadText(std::string file) {
-    Texture2D text2D;
-    text2D = LoadTexture(file.c_str());
-    return text2D;
+void TextureManager::LoadText(const std::string &file, const std::string &key) {
+    Texture2D txt2d = LoadTexture(file.c_str());
+    Texturetree[key] = txt2d;
+}
+
+Texture2D TextureManager::search(const std::string &key) {
+    Texture2D t2d = Texturetree[key];
+    return t2d;
 }

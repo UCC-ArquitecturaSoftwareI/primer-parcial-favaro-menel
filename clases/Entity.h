@@ -9,16 +9,13 @@
 class Entity {
 protected:
     Texture2D text2D;
-    TextureManager text_man;
     Vector2 car_pos;
 public:
     virtual void move_x(float d) = 0;
 
     virtual void move_y(float d) = 0;
 
-    virtual float getpos_x() = 0;
-
-    virtual float getpos_y() = 0;
+    virtual Vector2 getpos() = 0;
 
     virtual void setpos_x(float x) = 0;
 

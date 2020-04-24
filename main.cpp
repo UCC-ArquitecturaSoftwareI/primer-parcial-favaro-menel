@@ -6,31 +6,11 @@
 #if defined(PLATFORM_WEB) // Para crear HTML5
 #include <emscripten/emscripten.h>
 #endif
-//const int screenWidth = 800;
-//const int screenHeight = 450;
-
-// Variables Globales
-Music music;
-Car *player;
-
-Texture2D map;
-float map_x = 0, map_y = 0;
 
 static void UpdateDrawFrame(void);          // Función dedicada a operar cada frame
 
 int main() {
-    // Inicialización de la ventana
-    //InitWindow(screenWidth, screenHeight, "raylib template - advance game");
-    //InitAudioDevice();              // Initialize audio device
     Game &play = Game::get();
-    play.Loaddata("resources/Map/map.json");
-    /// Ejemplo de utilización de audio.
-    music = LoadMusicStream("resources/Cyberpunk Moonlight Sonata.mp3");
-
-    PlayMusicStream(music);
-    player = new Car("resources/car_red_3.png", Vector2{screenWidth / 2, screenHeight / 2});
-    map = LoadTexture("resources/Map/map.json");
-
 
 #if defined(PLATFORM_WEB)  // Para versión Web.
     emscripten_set_main_loop(UpdateDrawFrame, 0, 1);
@@ -42,13 +22,6 @@ int main() {
     }
 #endif
 
-
-    // Descargar todos los resources cargados
-
-    UnloadMusicStream(music);   // Descargo la musica de RAM
-    CloseAudioDevice();         // Cierro el dispositivo de Audio
-    CloseWindow();              // Cierro la ventana
-    return 0;
 }
 
 
@@ -92,3 +65,7 @@ static void UpdateDrawFrame(void) {
     // Finalizo el dibujado
     EndDrawing();
 }
+
+
+
+

@@ -13,9 +13,7 @@ public:
 
     void move_y(float d) override;
 
-    float getpos_x() override;
-
-    float getpos_y() override;
+    Vector2 getpos() override;
 
     void setpos_x(float x) override;
 
