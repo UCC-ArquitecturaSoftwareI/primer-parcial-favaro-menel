@@ -1,5 +1,4 @@
 
-
 #include "LoadData.h"
 
 /**
@@ -59,7 +58,7 @@ Rectangle LoadData::Loadline() {
     line.y = l->getPosition().y;
     line.height = l->getSize().x;
     line.width = l->getSize().y;
-    return
+    return line;
 }
 
 tson::Map &LoadData::getMap() {

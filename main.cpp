@@ -11,7 +11,11 @@
 
 int main() {
     Game &play = Game::get();
+    Map mapa;
+
     play.finish();
+
+
 
 
 }

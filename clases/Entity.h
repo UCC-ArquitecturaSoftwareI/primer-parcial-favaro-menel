@@ -1,4 +1,4 @@
-#include "../cmake-build-debug/_deps/raylib-src/src/raylib.h"
+//#include "../cmake-build-debug/_deps/raylib-src/src/raylib.h"
 
 #ifndef RAYLIBTEMPLATE_ENTITY_H
 #define RAYLIBTEMPLATE_ENTITY_H

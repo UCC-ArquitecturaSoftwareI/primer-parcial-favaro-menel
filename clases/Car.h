@@ -1,5 +1,5 @@
-#ifndef RAYLIBTEMPLATE_NAVE_H
-#define RAYLIBTEMPLATE_NAVE_H
+#ifndef RAYLIBTEMPLATE_CAR_H
+#define RAYLIBTEMPLATE_CAR_H
 #include <raylib.h>
 #include <string>
 #include "Entity.h"
@@ -20,4 +20,4 @@ public:
 };
 
 
-#endif //RAYLIBTEMPLATE_NAVE_H
+#endif //RAYLIBTEMPLATE_CAR_H

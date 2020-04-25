@@ -1,6 +1,6 @@
 #ifndef RAYLIBTEMPLATE_LOADDATA_H
 #define RAYLIBTEMPLATE_LOADDATA_H
-#endif //RAYLIBTEMPLATE_LOADDATA_H
+
 
 #include "../Libs/tileson.hpp"
 #include "TextureManager.h"
@@ -30,3 +30,5 @@ public:
 
     TextureManager getTexMan();
 };
+
+#endif //RAYLIBTEMPLATE_LOADDATA_H

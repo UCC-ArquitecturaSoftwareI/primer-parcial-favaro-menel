@@ -1,6 +1,5 @@
 #include "Car.h"
 
-
 Car::Car() {
     car_pos = ld.LoadPlayer();
     text2D = ld.getTexMan().search("enemy");
@@ -10,7 +9,6 @@ Car::Car() {
     camera.rotation = 0.0f;
     camera.zoom = 2.0f;
 }
-
 
 Vector2 Car::getpos() {
     return Vector2();
