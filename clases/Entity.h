@@ -4,20 +4,17 @@
 #define RAYLIBTEMPLATE_ENTITY_H
 #endif //RAYLIBTEMPLATE_ENTITY_H
 
-#include "TextureManager.h"
+#include "LoadData.h"
+
 
 class Entity {
 protected:
     Texture2D text2D;
     Vector2 car_pos;
+    LoadData ld;
 public:
-    virtual void move_x(float d) = 0;
-
-    virtual void move_y(float d) = 0;
 
     virtual Vector2 getpos() = 0;
 
-    virtual void setpos_x(float x) = 0;
-
-    virtual void setpos_y(float y) = 0;
+    virtual LoadData &getLd() = 0;
 };

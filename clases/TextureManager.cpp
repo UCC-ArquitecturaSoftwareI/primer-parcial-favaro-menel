@@ -11,8 +11,7 @@ TextureManager::TextureManager() = default;
  */
 
 void TextureManager::LoadText(const std::string &file, const std::string &key) {
-    Texture2D txt2d = LoadTexture(file.c_str());
-    Texturetree[key] = txt2d;
+    Texturetree[key] = LoadTexture(file.c_str());
 }
 
 Texture2D TextureManager::search(const std::string &key) {

@@ -5,9 +5,13 @@
 #include <string>
 #include <raylib.h>
 #include "Map.h"
-class Renderer{
+#include "Car.h"
+
+
+class Renderer {
 private:
     Map map;
+    Car car;
 public:
     Renderer();
 
@@ -16,4 +20,8 @@ public:
     void drawplayer();
 
     void drawenemies();
+
+    void drawtext();
+
+    void finish();
 };

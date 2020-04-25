@@ -23,42 +23,57 @@ void LoadData::LoadMap(std::string file) {
  */
 Vector2 LoadData::LoadPlayer() {
     Vector2 player_pos;
-    if (map.getStatus() == tson::ParseStatus::OK) {
-        tex_man.LoadText("resources/Cars/car_red_3.png", "player");
-        auto objs = map.getLayer("Cars");
-        tson::Object *play = objs->firstObj("Player");
-        player_pos.x = play->getPosition().x;
-        player_pos.y = play->getPosition().y;
-        return player_pos;
-    }
-
+    tex_man.LoadText("resources/Cars/car_red_3.png", "player");
+    auto objs = map.getLayer("Cars");
+    tson::Object *play = objs->firstObj("Player");
+    player_pos.x = play->getPosition().x;
+    player_pos.y = play->getPosition().y;
+    return player_pos;
 }
 
 std::vector<Vector2> LoadData::LoadEnemies() {
     std::vector<Vector2> enemy_pos;
-    tex_man.LoadText("resources/Cars/car_black_4.png","enemy");
-    if (map.getStatus() == tson::ParseStatus::OK) {
-        auto objs = map.getLayer("Cars");
-        std::vector<tson::Object> enemies = objs->getObjectsByName("Enemy");
-        for (int i = 0; i < enemies.size(); i++) {
-            enemy_pos[i].x = enemies[i].getPosition().x;
-            enemy_pos[i].y = enemies[i].getPosition().y;
-        }
+    tex_man.LoadText("resources/Cars/car_black_4.png", "enemy");
+    auto objs = map.getLayer("Cars");
+    std::vector<tson::Object> enemies = objs->getObjectsByName("Enemy");
+    for (int i = 0; i < enemies.size(); i++) {
+        enemy_pos[i].x = enemies[i].getPosition().x;
+        enemy_pos[i].y = enemies[i].getPosition().y;
     }
     return enemy_pos;
+}
+
+void LoadData::LoadTrack() {
+    if (map.getStatus() == tson::ParseStatus::OK) {
+        auto objs = map.getLayer("Track");
+        tson::Object *track = objs->firstObj("Track");
+    }
+
+}
+
+Rectangle LoadData::Loadline() {
+    Rectangle line;
+    auto objs = map.getLayer("Track");
+    tson::Object *l = objs->firstObj("Line");
+    line.x = l->getPosition().x;
+    line.y = l->getPosition().y;
+    line.height = l->getSize().x;
+    line.width = l->getSize().y;
+    return
 }
 
 tson::Map &LoadData::getMap() {
     return map;
 }
 
-tson::Tileset *LoadData::getMapTileset(){
+tson::Tileset *LoadData::getMapTileset() {
     return map_tileset;
 }
 
 TextureManager LoadData::getTexMan() {
     return tex_man;
 }
+
 
 /**
  * Constructor by default.

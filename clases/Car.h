@@ -1,23 +1,22 @@
+#ifndef RAYLIBTEMPLATE_NAVE_H
+#define RAYLIBTEMPLATE_NAVE_H
 #include <raylib.h>
 #include <string>
 #include "Entity.h"
-#ifndef RAYLIBTEMPLATE_NAVE_H
-#define RAYLIBTEMPLATE_NAVE_H
 
-
-class Car: public Entity {
+class Car : public Entity {
+private:
+    Camera2D camera;
 public:
     Car();
 
-    void move_x(float d) override;
-
-    void move_y(float d) override;
+    void movement();
 
     Vector2 getpos() override;
 
-    void setpos_x(float x) override;
+    LoadData &getLd() override;
 
-    void setpos_y(float y) override;
+    const Camera2D &getCamera() const;
 };
 
 

@@ -2,13 +2,14 @@
 
 #include "SoundManager.h"
 
-SoundManager::SoundManager() {
+SoundManager::SoundManager() = default;
+
+
+void SoundManager::LoadSounds(const std::string &file, const std::string &key) {
+    Soundtree[key] = LoadMusicStream(file.c_str());
 
 }
 
-Music SoundManager::LoadSounds(std::string file) {
-    Music music;
-    return music = LoadMusicStream(file.c_str());
+Music SoundManager::search(const std::string &key) {
+    return Soundtree[key];
 }
-
-

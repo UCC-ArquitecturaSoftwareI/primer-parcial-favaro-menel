@@ -8,7 +8,6 @@
 
 class LoadData {
 private:
-    Texture2D text2D;
     tson::Map map;
     TextureManager tex_man;
     tson::Tileset *map_tileset;
@@ -20,6 +19,10 @@ public:
     Vector2 LoadPlayer();
 
     std::vector<Vector2> LoadEnemies();
+
+    Rectangle Loadline();
+
+    void LoadTrack();
 
     tson::Map &getMap();
 

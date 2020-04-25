@@ -7,6 +7,7 @@
 Map::Map() {
     int i = 0;
     ld.LoadMap("resources/Map/map.json");
+    rectangle= ld.Loadline();
 
 
     int FirstID = ld.getMapTileset()->getFirstgid();
@@ -52,5 +53,9 @@ std::vector<Rectangle> &Map::getTileRec(){
 
 std::vector<Vector2> &Map::getPosition() {
     return position;
+}
+
+Rectangle &Map::getRectangle(){
+    return rectangle;
 }
 

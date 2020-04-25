@@ -10,10 +10,13 @@ class Map {
     LoadData ld;
     std::vector<Rectangle> tile_rec;
     std::vector<Vector2> position;
+    Rectangle rectangle;
 public:
     Map();
 
     LoadData &getLd();
+    
+    Rectangle &getRectangle();
 
     std::vector<Rectangle> &getTileRec();
 
