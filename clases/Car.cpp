@@ -35,7 +35,7 @@ LoadData &Car::getLd() {
     return ld;
 }
 
-const Camera2D &Car::getCamera() const {
+Camera2D &Car::getCamera() {
     return camera;
 }
 

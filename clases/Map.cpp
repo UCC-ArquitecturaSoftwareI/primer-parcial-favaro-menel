@@ -1,14 +1,10 @@
-//
-// Created by Euge on 17/04/2020.
-//
 
 #include "Map.h"
 
 Map::Map() {
     int i = 0;
-    ld.LoadMap("resources/Map/map.json");
+    ld.LoadMap("../resources/Map/map.json");
     rectangle= ld.Loadline();
-
 
     int FirstID = ld.getMapTileset()->getFirstgid();
     int Columns = ld.getMapTileset()->getColumns();

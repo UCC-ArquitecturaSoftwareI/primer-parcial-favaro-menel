@@ -2,7 +2,6 @@
 
 #ifndef RAYLIBTEMPLATE_ENTITY_H
 #define RAYLIBTEMPLATE_ENTITY_H
-#endif //RAYLIBTEMPLATE_ENTITY_H
 
 #include "LoadData.h"
 
@@ -18,3 +17,5 @@ public:
 
     virtual LoadData &getLd() = 0;
 };
+
+#endif //RAYLIBTEMPLATE_ENTITY_H

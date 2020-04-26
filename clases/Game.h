@@ -14,7 +14,6 @@ private:
     int Width = 800;
     SoundManager soundmanager;
     Game();
-
 public:
     static Game &get();
 
@@ -23,5 +22,4 @@ public:
     void Loop();
 
     void UpdateDrawFrame();
-
 };

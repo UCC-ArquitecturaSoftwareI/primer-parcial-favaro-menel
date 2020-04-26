@@ -1,6 +1,5 @@
 #ifndef RAYLIBTEMPLATE_MAP_H
 #define RAYLIBTEMPLATE_MAP_H
-#endif //RAYLIBTEMPLATE_MAP_H
 
 #include <string>
 #include <raylib.h>
@@ -22,3 +21,5 @@ public:
 
     std::vector<Vector2> &getPosition();
 };
+
+#endif //RAYLIBTEMPLATE_MAP_H

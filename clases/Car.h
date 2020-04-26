@@ -16,7 +16,7 @@ public:
 
     LoadData &getLd() override;
 
-    const Camera2D &getCamera() const;
+    Camera2D &getCamera();
 };
 
 

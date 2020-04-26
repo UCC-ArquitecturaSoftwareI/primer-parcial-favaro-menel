@@ -1,6 +1,5 @@
 #ifndef RAYLIBTEMPLATE_RENDERER_H
 #define RAYLIBTEMPLATE_RENDERER_H
-#endif //RAYLIBTEMPLATE_RENDERER_H
 
 #include <string>
 #include <raylib.h>
@@ -25,3 +24,5 @@ public:
 
     void finish();
 };
+
+#endif //RAYLIBTEMPLATE_RENDERER_H

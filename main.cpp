@@ -7,17 +7,26 @@
 #include <emscripten/emscripten.h>
 #endif
 
+
 //static void UpdateDrawFrame(void);          // Función dedicada a operar cada frame
 
 int main() {
     Game &play = Game::get();
-    Map mapa;
+    //Map mapa;
+
+    play.Loop();
+
+
+
+    //graphics.drawmap();
+    //graphics.drawplayer();
+
 
     play.finish();
 
 
 
-
+    return 0;
 }
 
 

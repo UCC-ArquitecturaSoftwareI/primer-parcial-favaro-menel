@@ -1,5 +1,6 @@
 
 #include "Game.h"
+#include "LoadData.h"
 
 /**
  * Function that returns the constructor.
@@ -16,7 +17,7 @@ Game &Game::get() {
 Game::Game() {
     InitWindow(Width, Height, "raylib template - advance game");
     InitAudioDevice();
-    soundmanager.LoadSounds("Cyberpunk Moonlight Sonata.mp3", "game");
+    PlayMusicStream(soundmanager.LoadSounds("../resources/Cyberpunk Moonlight Sonata.mp3", "game"));
 }
 
 /**
@@ -41,7 +42,6 @@ void Game::Loop() {
         UpdateDrawFrame();
     }
 #endif
-
 }
 
 /**
