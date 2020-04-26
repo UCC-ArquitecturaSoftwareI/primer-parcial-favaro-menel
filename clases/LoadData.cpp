@@ -1,4 +1,3 @@
-
 #include "LoadData.h"
 
 /**
@@ -9,8 +8,8 @@ void LoadData::LoadMap(std::string file) {
     tson::Tileson parser;
     map = parser.parse(fs::path(file));
     if (map.getStatus() == tson::ParseStatus::OK) {
-        for (auto &tileset: map.getTilesets()) {
-            tex_man.LoadText("resources/Map" + tileset.getImage().string(), "map");
+        for (auto &tileset : map.getTilesets()) {
+            tex_man.LoadTextures("../resources/Map/" + tileset.getImage().string(), "map");
             map_tileset = &tileset;
         }
     }
@@ -22,17 +21,22 @@ void LoadData::LoadMap(std::string file) {
  */
 Vector2 LoadData::LoadPlayer() {
     Vector2 player_pos;
-    tex_man.LoadText("resources/Cars/car_red_3.png", "player");
+    tex_man.LoadTextures("resources/Cars/car_red_3.png", "player");
     auto objs = map.getLayer("Cars");
-    tson::Object *play = objs->firstObj("Player");
-    player_pos.x = play->getPosition().x;
-    player_pos.y = play->getPosition().y;
+    tson::Object *player = objs->firstObj("Player");
+    player_pos.x = player->getPosition().x;
+    player_pos.y = player->getPosition().y;
     return player_pos;
 }
 
+/**
+ * Load enemies data.
+ * @return -> Vector with initial positions of the enemies.
+ */
+ /*
 std::vector<Vector2> LoadData::LoadEnemies() {
     std::vector<Vector2> enemy_pos;
-    tex_man.LoadText("resources/Cars/car_black_4.png", "enemy");
+    tex_man.LoadTextures("resources/Cars/car_black_4.png", "enemy");
     auto objs = map.getLayer("Cars");
     std::vector<tson::Object> enemies = objs->getObjectsByName("Enemy");
     for (int i = 0; i < enemies.size(); i++) {
@@ -41,13 +45,12 @@ std::vector<Vector2> LoadData::LoadEnemies() {
     }
     return enemy_pos;
 }
-
+*/
 void LoadData::LoadTrack() {
     if (map.getStatus() == tson::ParseStatus::OK) {
         auto objs = map.getLayer("Track");
         tson::Object *track = objs->firstObj("Track");
     }
-
 }
 
 Rectangle LoadData::Loadline() {
@@ -72,7 +75,6 @@ tson::Tileset *LoadData::getMapTileset() {
 TextureManager LoadData::getTexMan() {
     return tex_man;
 }
-
 
 /**
  * Constructor by default.

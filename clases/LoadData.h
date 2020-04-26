@@ -5,7 +5,6 @@
 #include "../Libs/tileson.hpp"
 #include "TextureManager.h"
 
-
 class LoadData {
 private:
     tson::Map map;

@@ -14,7 +14,7 @@ public:
     Map();
 
     LoadData &getLd();
-    
+
     Rectangle &getRectangle();
 
     std::vector<Rectangle> &getTileRec();

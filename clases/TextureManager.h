@@ -13,7 +13,7 @@ private:
 public:
     TextureManager();
 
-    void LoadText(const std::string &file, const std::string &key);
+    Texture2D LoadTextures(const std::string &file, const std::string &key);
 
     Texture2D search(const std::string &key);
 };

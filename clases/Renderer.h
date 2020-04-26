@@ -5,6 +5,7 @@
 #include <raylib.h>
 #include "Map.h"
 #include "Car.h"
+#include "TextureManager.h"
 
 
 class Renderer {

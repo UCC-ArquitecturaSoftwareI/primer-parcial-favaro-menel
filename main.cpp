@@ -1,34 +1,22 @@
-
 #include "clases/Game.h"
-#include "clases/Renderer.h"
 
 
 #if defined(PLATFORM_WEB) // Para crear HTML5
 #include <emscripten/emscripten.h>
 #endif
 
-
 //static void UpdateDrawFrame(void);          // Función dedicada a operar cada frame
 
+auto &play = Game::get();
+
+
 int main() {
-    Game &play = Game::get();
-    //Map mapa;
 
     play.Loop();
 
 
-
-    //graphics.drawmap();
-    //graphics.drawplayer();
-
-
-    play.finish();
-
-
-
     return 0;
 }
-
 
 /**
  *  Función dedicada a dibujar cada frame. Acá adentro se debe poner la logica necesaria para representar un nuevo frame

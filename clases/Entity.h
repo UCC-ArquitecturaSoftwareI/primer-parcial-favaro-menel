@@ -12,7 +12,6 @@ protected:
     Vector2 car_pos;
     LoadData ld;
 public:
-
     virtual Vector2 getpos() = 0;
 
     virtual LoadData &getLd() = 0;

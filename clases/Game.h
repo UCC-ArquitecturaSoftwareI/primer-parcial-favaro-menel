@@ -1,6 +1,5 @@
 #ifndef RAYLIBTEMPLATE_GAME_H
 #define RAYLIBTEMPLATE_GAME_H
-#endif //RAYLIBTEMPLATE_GAME_H
 
 #include <string>
 #include <raylib.h>
@@ -23,3 +22,4 @@ public:
 
     void UpdateDrawFrame();
 };
+#endif //RAYLIBTEMPLATE_GAME_H

@@ -4,7 +4,7 @@
 Map::Map() {
     int i = 0;
     ld.LoadMap("../resources/Map/map.json");
-    rectangle= ld.Loadline();
+    rectangle = ld.Loadline();
 
     int FirstID = ld.getMapTileset()->getFirstgid();
     int Columns = ld.getMapTileset()->getColumns();
@@ -21,9 +21,10 @@ Map::Map() {
             tile_rec[i].y = ld.getMap().getTileSize().y;
             if (tile != nullptr) {
                 position[i] = {(float) std::get<0>(pos) * ld.getMap().getTileSize().x,
-                                    (float) std::get<1>(pos) * ld.getMap().getTileSize().y};
+                               (float) std::get<1>(pos) * ld.getMap().getTileSize().y};
 
                 int baseTilePosition = (tile->getId() - FirstID);
+
                 int tileModX = (baseTilePosition % Columns);
                 int currentRow = (baseTilePosition / Columns);
                 int offsetX = tileModX * (ld.getMap().getTileSize().x + Space) + Margin;
@@ -33,17 +34,15 @@ Map::Map() {
                 tile_rec[i].y = offsetY;
                 i++;
             }
-
         }
     }
-
 }
 
 LoadData &Map::getLd() {
     return ld;
 }
 
-std::vector<Rectangle> &Map::getTileRec(){
+std::vector<Rectangle> &Map::getTileRec() {
     return tile_rec;
 }
 
@@ -51,7 +50,7 @@ std::vector<Vector2> &Map::getPosition() {
     return position;
 }
 
-Rectangle &Map::getRectangle(){
+Rectangle &Map::getRectangle() {
     return rectangle;
 }
 
