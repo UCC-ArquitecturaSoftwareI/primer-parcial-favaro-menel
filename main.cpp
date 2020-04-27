@@ -1,6 +1,5 @@
 #include "clases/Game.h"
 
-
 #if defined(PLATFORM_WEB) // Para crear HTML5
 #include <emscripten/emscripten.h>
 #endif
@@ -9,12 +8,11 @@
 
 auto &play = Game::get();
 
-
 int main() {
 
     play.Loop();
 
-
+    play.finish();
     return 0;
 }
 

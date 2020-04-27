@@ -1,4 +1,12 @@
-{ "compressionlevel":-1,
+{ "backgroundcolor":"#aaff7f",
+ "compressionlevel":-1,
+ "editorsettings":
+    {
+     "export":
+        {
+         "target":"."
+        }
+    },
  "height":25,
  "infinite":false,
  "layers":[
@@ -93,7 +101,7 @@
                 }],
          "opacity":1,
          "type":"objectgroup",
-         "visible":false,
+         "visible":true,
          "x":0,
          "y":0
         }, 
@@ -942,7 +950,7 @@
                 }],
          "opacity":1,
          "type":"objectgroup",
-         "visible":false,
+         "visible":true,
          "x":0,
          "y":0
         }],
@@ -950,7 +958,7 @@
  "nextobjectid":40,
  "orientation":"orthogonal",
  "renderorder":"right-down",
- "tiledversion":"1.3.3",
+ "tiledversion":"1.3.1",
  "tileheight":128,
  "tilesets":[
         {

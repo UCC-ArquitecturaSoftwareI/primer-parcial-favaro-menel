@@ -10,8 +10,8 @@ void Renderer::drawmap() {
     ClearBackground({c.r,c.g,c.b,c.a});
 
     //DrawTexture(map.getLd().getTexMan().search("map"),0,0,RAYWHITE);
-    DrawTextureRec(map.getLd().getTexMan().search("map"), map.getTileRec()[0], map.getPosition()[0], RAYWHITE);
-    DrawTextureRec(map.getLd().getTexMan().search("map"), map.getTileRec()[1], map.getPosition()[1], RAYWHITE);
+    //DrawTextureRec(map.getLd().getTexMan().search("map"), map.getTileRec()[0], map.getPosition()[0], RAYWHITE);
+    //DrawTextureRec(map.getLd().getTexMan().search("map"), map.getTileRec()[1], map.getPosition()[1], RAYWHITE);
 }
 
 void Renderer::drawenemies() {

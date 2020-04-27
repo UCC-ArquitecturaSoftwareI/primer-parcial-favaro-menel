@@ -16,13 +16,15 @@ Game &Game::get() {
 Game::Game() {
     InitWindow(Width, Height, "raylib template - advance game");
     InitAudioDevice();
-    PlayMusicStream(soundmanager.LoadSounds("../resources/Cyberpunk Moonlight Sonata.mp3", "game"));
+    soundmanager.LoadSounds("../resources/Cyberpunk Moonlight Sonata.mp3", "game");
+    PlayMusicStream(soundmanager.search("game"));
 }
 
 /**
  * Function to close window.
  */
 void Game::finish() {
+    UnloadMusicStream(soundmanager.search("game"));
     CloseAudioDevice();
     CloseWindow();
 }

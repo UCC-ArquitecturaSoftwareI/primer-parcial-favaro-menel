@@ -1,7 +1,6 @@
 #ifndef RAYLIBTEMPLATE_LOADDATA_H
 #define RAYLIBTEMPLATE_LOADDATA_H
 
-
 #include "../Libs/tileson.hpp"
 #include "TextureManager.h"
 

@@ -16,7 +16,7 @@ private:
 public:
     static Game &get();
 
-    static void finish();
+    void finish();
 
     void Loop();
 

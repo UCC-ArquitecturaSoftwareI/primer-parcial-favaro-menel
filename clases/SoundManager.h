@@ -14,7 +14,7 @@ private:
 public:
     SoundManager();
 
-    Music LoadSounds(const std::string &file, const std::string &key);
+    void LoadSounds(const std::string &file, const std::string &key);
 
     Music search(const std::string &key);
 };
