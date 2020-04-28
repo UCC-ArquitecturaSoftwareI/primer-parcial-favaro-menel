@@ -2,12 +2,13 @@
 
 Renderer::Renderer() {
     BeginDrawing();
+    auto &c = map.getLd().getMap().getBackgroundColor();
+    ClearBackground({c.r,c.g,c.b,c.a});
     //BeginMode2D(car.getCamera());
 };
 
 void Renderer::drawmap() {
-    auto &c = map.getLd().getMap().getBackgroundColor();
-    ClearBackground({c.r,c.g,c.b,c.a});
+
 
     //DrawTexture(map.getLd().getTexMan().search("map"),0,0,RAYWHITE);
     //DrawTextureRec(map.getLd().getTexMan().search("map"), map.getTileRec()[0], map.getPosition()[0], RAYWHITE);

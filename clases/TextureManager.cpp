@@ -11,7 +11,6 @@ TextureManager::TextureManager() = default;
  */
 void TextureManager::LoadTextures(const std::string &file, const std::string &key) {
     Texturetree[key] = LoadTexture(file.c_str());
-    //return Texturetree[key];
 }
 
 /**

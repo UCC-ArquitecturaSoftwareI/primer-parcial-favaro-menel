@@ -3,7 +3,7 @@
 Map::Map() {
     int i = 0;
 
-    ld.LoadMap("../resources/Map/map.json");
+    ld.LoadMap("../resources/Map/map_2.json");
     rectangle = ld.Loadline();
 
     int FirstID = ld.getMapTileset()->getFirstgid();
