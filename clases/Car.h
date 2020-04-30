@@ -3,12 +3,13 @@
 #include <raylib.h>
 #include <string>
 #include "Entity.h"
+#include "LoadData.h"
 
 class Car : public Entity {
 private:
     Camera2D camera;
 public:
-    Car();
+    Car(LoadData &ld);
 
     void movement();
 

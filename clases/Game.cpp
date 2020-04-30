@@ -14,19 +14,18 @@ Game &Game::get() {
  */
 Game::Game() {
     InitWindow(Width, Height, "raylib template - advance game");
-    InitAudioDevice();
     render = new Renderer;
     soundmanager.LoadSounds("../resources/Cyberpunk Moonlight Sonata.mp3", "game");
-    PlayMusicStream(soundmanager.search("game"));
+    soundmanager.Play("game");
 }
 
 /**
  * Function that closes window and audio.
  */
 void Game::finish() {
-    UnloadMusicStream(soundmanager.search("game"));
+    soundmanager.Stop("game");
     delete render;
-    CloseAudioDevice();
+    soundmanager.finish();
     CloseWindow();
 }
 
@@ -51,7 +50,7 @@ void Game::Loop() {
  * it loads all the logic needed to draw every frame.
  */
 void Game::UpdateDrawFrame() {
-    UpdateMusicStream(soundmanager.search("game"));
+    soundmanager.Rewind("game");
     render->drawmap();
     render->drawplayer();
     render->finish();

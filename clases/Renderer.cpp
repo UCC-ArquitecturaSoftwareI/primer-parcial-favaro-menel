@@ -2,7 +2,7 @@
 
 Renderer::Renderer() {
     map = new Map;
-    car = new Car;
+    car = new Car(*map->getLd());
     BeginDrawing();
     auto &c = map->getLd()->getMap().getBackgroundColor();
     ClearBackground({c.r, c.g, c.b, c.a});

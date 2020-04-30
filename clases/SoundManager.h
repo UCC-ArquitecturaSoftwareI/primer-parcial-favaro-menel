@@ -17,6 +17,14 @@ public:
     void LoadSounds(const std::string &file, const std::string &key);
 
     Music search(const std::string &key);
+
+    void Play(std::string key);
+
+    void Stop(std::string key);
+
+    void Rewind(std::string key);
+
+    static void finish();
 };
 
 #endif //RAYLIBTEMPLATE_SOUNDMANAGER_H
