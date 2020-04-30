@@ -10,8 +10,8 @@
 
 class Renderer {
 private:
-    Map map;
-    Car car;
+    Map *map;
+    Car *car;
 public:
     Renderer();
 
@@ -24,6 +24,7 @@ public:
     void drawtext();
 
     void finish();
+
 };
 
 #endif //RAYLIBTEMPLATE_RENDERER_H

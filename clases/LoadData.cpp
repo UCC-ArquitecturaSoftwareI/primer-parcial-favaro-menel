@@ -1,21 +1,6 @@
 #include "LoadData.h"
 
 /**
- *  It loads all data from the map.json
- * @param file -> Map texture.
- */
-void LoadData::LoadMap(std::string file) {
-    tson::Tileson parser;
-    map = parser.parse(fs::path(file));
-    if (map.getStatus() == tson::ParseStatus::OK) {
-        for (auto &tileset : map.getTilesets()) {
-            tex_man.LoadTextures("resources/Map/" + tileset.getImage().string(), "map");
-            map_tileset = &tileset;
-        }
-    }
-}
-
-/**
  * it loads the player data.
  * @return -> the initial position of the car's player.
  */
@@ -33,7 +18,6 @@ Vector2 LoadData::LoadPlayer() {
  * Load enemies data.
  * @return -> Vector with initial positions of the enemies.
  */
- /*
 std::vector<Vector2> LoadData::LoadEnemies() {
     std::vector<Vector2> enemy_pos;
     tex_man.LoadTextures("resources/Cars/car_black_4.png", "enemy");
@@ -45,13 +29,7 @@ std::vector<Vector2> LoadData::LoadEnemies() {
     }
     return enemy_pos;
 }
-*/
-void LoadData::LoadTrack() {
-    if (map.getStatus() == tson::ParseStatus::OK) {
-        auto objs = map.getLayer("Track");
-        tson::Object *track = objs->firstObj("Track");
-    }
-}
+
 
 Rectangle LoadData::Loadline() {
     Rectangle line;
@@ -79,4 +57,13 @@ TextureManager LoadData::getTexMan() {
 /**
  * Constructor by default.
  */
-LoadData::LoadData() = default;
+LoadData::LoadData(std::string file) {
+    tson::Tileson parser;
+    map = parser.parse(fs::path(file));
+    if (map.getStatus() == tson::ParseStatus::OK) {
+        for (auto &tileset : map.getTilesets()) {
+            tex_man.LoadTextures("resources/Map/" + tileset.getImage().string(), "map");
+            map_tileset = &tileset;
+        }
+    }
+};

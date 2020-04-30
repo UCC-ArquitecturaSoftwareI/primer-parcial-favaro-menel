@@ -1,5 +1,4 @@
 #include "Game.h"
-#include "LoadData.h"
 
 /**
  * Function that returns the constructor.
@@ -16,15 +15,17 @@ Game &Game::get() {
 Game::Game() {
     InitWindow(Width, Height, "raylib template - advance game");
     InitAudioDevice();
+    render = new Renderer;
     soundmanager.LoadSounds("../resources/Cyberpunk Moonlight Sonata.mp3", "game");
     PlayMusicStream(soundmanager.search("game"));
 }
 
 /**
- * Function to close window.
+ * Function that closes window and audio.
  */
 void Game::finish() {
     UnloadMusicStream(soundmanager.search("game"));
+    delete render;
     CloseAudioDevice();
     CloseWindow();
 }
@@ -51,8 +52,8 @@ void Game::Loop() {
  */
 void Game::UpdateDrawFrame() {
     UpdateMusicStream(soundmanager.search("game"));
-    render.drawmap();
-    render.finish();
+    render->drawmap();
+    render->finish();
 }
 
 

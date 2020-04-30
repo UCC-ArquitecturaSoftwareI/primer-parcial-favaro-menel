@@ -6,20 +6,20 @@
 #include "LoadData.h"
 
 class Map {
-    LoadData ld;
+    LoadData *ld;
     std::vector<Rectangle> tile_rec;
     std::vector<Vector2> position;
     Rectangle rectangle;
 public:
     Map();
 
-    LoadData &getLd();
-
     Rectangle &getRectangle();
 
     std::vector<Rectangle> &getTileRec();
 
     std::vector<Vector2> &getPosition();
+
+    LoadData &getLd();
 };
 
 #endif //RAYLIBTEMPLATE_MAP_H

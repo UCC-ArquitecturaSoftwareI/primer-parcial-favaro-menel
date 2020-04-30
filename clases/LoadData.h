@@ -10,17 +10,13 @@ private:
     TextureManager tex_man;
     tson::Tileset *map_tileset;
 public:
-    LoadData();
-
-    void LoadMap(std::string file);
+    LoadData(std::string file);
 
     Vector2 LoadPlayer();
 
     std::vector<Vector2> LoadEnemies();
 
     Rectangle Loadline();
-
-    void LoadTrack();
 
     tson::Map &getMap();
 

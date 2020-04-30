@@ -14,7 +14,6 @@ public:
 
     Vector2 getpos() override;
 
-    LoadData &getLd() override;
 
     Camera2D &getCamera();
 };

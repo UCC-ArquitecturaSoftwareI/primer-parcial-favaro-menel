@@ -1,8 +1,8 @@
 #include "Car.h"
 
 Car::Car() {
-    car_pos = ld.LoadPlayer();
-    text2D = ld.getTexMan().search("enemy");
+    //car_pos = ld.LoadPlayer();
+    //text2D = ld.getTexMan().search("enemy");
     camera = {0};
     camera.target = {car_pos};
     camera.offset = {car_pos};
@@ -29,10 +29,6 @@ void Car::movement() {
         car_pos.y -= 2;
     }
 
-}
-
-LoadData &Car::getLd() {
-    return ld;
 }
 
 Camera2D &Car::getCamera() {
