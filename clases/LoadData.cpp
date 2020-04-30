@@ -33,12 +33,12 @@ std::vector<Vector2> LoadData::LoadEnemies() {
 
 Rectangle LoadData::Loadline() {
     Rectangle line;
-    auto objs = map.getLayer("Track");
+    auto objs = map.getLayer("Line");
     tson::Object *l = objs->firstObj("Line");
     line.x = l->getPosition().x;
     line.y = l->getPosition().y;
-    line.height = l->getSize().x;
-    line.width = l->getSize().y;
+    line.height = l->getSize().y;
+    line.width = l->getSize().x;
     return line;
 }
 

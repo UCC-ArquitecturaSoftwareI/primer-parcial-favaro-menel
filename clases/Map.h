@@ -19,7 +19,7 @@ public:
 
     std::vector<Vector2> &getPosition();
 
-    LoadData &getLd();
+    LoadData *getLd() const;
 };
 
 #endif //RAYLIBTEMPLATE_MAP_H

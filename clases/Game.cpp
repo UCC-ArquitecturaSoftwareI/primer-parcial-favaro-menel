@@ -53,6 +53,7 @@ void Game::Loop() {
 void Game::UpdateDrawFrame() {
     UpdateMusicStream(soundmanager.search("game"));
     render->drawmap();
+    render->drawplayer();
     render->finish();
 }
 

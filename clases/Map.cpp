@@ -46,7 +46,8 @@ Rectangle &Map::getRectangle() {
     return rectangle;
 }
 
-LoadData &Map::getLd() {
+LoadData *Map::getLd() const {
     return ld;
 }
+
 

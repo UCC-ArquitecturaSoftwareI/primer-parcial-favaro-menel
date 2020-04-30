@@ -25,6 +25,7 @@ public:
 
     void finish();
 
+    Map *getMap() const;
 };
 
 #endif //RAYLIBTEMPLATE_RENDERER_H
