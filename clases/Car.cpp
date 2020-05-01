@@ -7,11 +7,11 @@ Car::Car(LoadData &ld) {
     camera.target = {car_pos};
     camera.offset = {car_pos};
     camera.rotation = 0.0f;
-    camera.zoom = 2.0f;
+    camera.zoom = 1.0f;
 }
 
 Vector2 Car::getpos() {
-    return Vector2();
+    return car_pos;
 }
 
 void Car::movement() {

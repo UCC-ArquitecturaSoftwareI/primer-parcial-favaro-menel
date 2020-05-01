@@ -1,5 +1,8 @@
 #include "Map.h"
-
+/**
+ * Constructor that uses the spritesheet to
+ * cut tile by tile and then build the texture of the map.
+ */
 Map::Map() {
     ld = new LoadData ("../resources/Map/map_2.json");
     int i = 0;
@@ -34,18 +37,30 @@ Map::Map() {
     }
 }
 
+/**
+ * @return -> the vector of the tiles.
+ */
 std::vector<Rectangle> &Map::getTileRec() {
     return tile_rec;
 }
 
+/**
+ * @return -> a position's vector of the tiles.
+ */
 std::vector<Vector2> &Map::getPosition() {
     return position;
 }
 
+/**
+ * @return -> Coordinates of the Line.
+ */
 Rectangle &Map::getRectangle() {
     return rectangle;
 }
 
+/**
+ * @return -> class LoadData.
+ */
 LoadData *Map::getLd() const {
     return ld;
 }

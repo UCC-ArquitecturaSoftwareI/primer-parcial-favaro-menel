@@ -30,7 +30,10 @@ std::vector<Vector2> LoadData::LoadEnemies() {
     return enemy_pos;
 }
 
-
+/**
+ * It loads the line of the track
+ * @return -> the rectangle of the line.
+ */
 Rectangle LoadData::Loadline() {
     Rectangle line;
     auto objs = map.getLayer("Line");
@@ -42,20 +45,29 @@ Rectangle LoadData::Loadline() {
     return line;
 }
 
+/**
+ * @return -> the tson::Map.
+ */
 tson::Map &LoadData::getMap() {
     return map;
 }
 
+/**
+ * @return -> the tson::Tileset.
+ */
 tson::Tileset *LoadData::getMapTileset() {
     return map_tileset;
 }
 
+/**
+ * @return -> The texturemanager.
+ */
 TextureManager LoadData::getTexMan() {
     return tex_man;
 }
 
 /**
- * Constructor by default.
+ * Constructor that loads the .json of the map.
  */
 LoadData::LoadData(std::string file) {
     tson::Tileson parser;

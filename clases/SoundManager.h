@@ -24,7 +24,7 @@ public:
 
     void Rewind(std::string key);
 
-    static void finish();
+    void finish();
 };
 
 #endif //RAYLIBTEMPLATE_SOUNDMANAGER_H

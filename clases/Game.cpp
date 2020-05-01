@@ -15,7 +15,7 @@ Game &Game::get() {
 Game::Game() {
     InitWindow(Width, Height, "raylib template - advance game");
     render = new Renderer;
-    soundmanager.LoadSounds("../resources/Cyberpunk Moonlight Sonata.mp3", "game");
+    soundmanager.LoadSounds("../resources/Music/tokyo_drift.mp3", "game");
     soundmanager.Play("game");
 }
 
