@@ -74,7 +74,7 @@ LoadData::LoadData(std::string file) {
     map = parser.parse(fs::path(file));
     if (map.getStatus() == tson::ParseStatus::OK) {
         for (auto &tileset : map.getTilesets()) {
-            tex_man.LoadTextures("resources/Map/" + tileset.getImage().string(), "map");
+            tex_man.LoadTextures("../resources/Map/"  + tileset.getImage().string(), "map");
             map_tileset = &tileset;
         }
     }
