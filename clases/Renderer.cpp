@@ -17,7 +17,7 @@ Renderer::Renderer() {
  * It draws the map, tile by tile.
  */
 void Renderer::drawmap() {
-    DrawTexture(map->getLd()->getTexMan().search("map"), 0, 0, RAYWHITE);
+    DrawTexture(map->getLd()->getTexMan().search("map"), 0, 90, RAYWHITE);
     for (int i = 0; i < map->getPosition().size(); i++)
         DrawTextureRec(map->getLd()->getTexMan().search("map"), map->getTileRec()[i], map->getPosition()[i], RAYWHITE);
 }
@@ -54,7 +54,11 @@ void Renderer::finish() {
 /**
  * @return -> the map of the game.
  */
-Map *Renderer::getMap() const {
+Map *Renderer::getMap(){
     return map;
+}
+
+Car *Renderer::getCar(){
+    return car;
 }
 

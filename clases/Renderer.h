@@ -25,7 +25,9 @@ public:
 
     void finish();
 
-    Map *getMap() const;
+    Map *getMap();
+
+    Car *getCar();
 };
 
 #endif //RAYLIBTEMPLATE_RENDERER_H

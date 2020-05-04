@@ -9,8 +9,8 @@
 
 class Game {
 private:
-    int Height = 450;
-    int Width = 800;
+    int Height = 600;
+    int Width = 1000;
     SoundManager soundmanager;
     Renderer *render;
     Game();
