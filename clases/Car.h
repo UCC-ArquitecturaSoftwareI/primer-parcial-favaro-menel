@@ -7,15 +7,12 @@
 
 class Car : public Entity {
 private:
-    Camera2D camera;
 public:
     Car(LoadData &ld);
 
-    void movement();
 
     Vector2 getpos() override;
 
-    Camera2D &getCamera();
 };
 
 

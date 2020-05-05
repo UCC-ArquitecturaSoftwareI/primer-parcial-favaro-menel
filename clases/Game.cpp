@@ -15,7 +15,7 @@ Game &Game::get() {
 Game::Game() {
     InitWindow(Width, Height, "raylib template - advance game");
     render = new Renderer;
-    soundmanager.LoadSounds("../resources/Music/tokyo_drift.mp3", "game");
+    soundmanager.LoadSounds("../resources/Music/tokyo-drift-8-bit.mp3", "game");
     soundmanager.Play("game");
 }
 
@@ -51,9 +51,19 @@ void Game::Loop() {
  */
 void Game::UpdateDrawFrame() {
     soundmanager.Rewind("game");
+    render->camerainit();
     render->drawmap();
     render->drawplayer();
+    render->cameraend();
     render->finish();
+}
+
+int Game::getHeight() const {
+    return Height;
+}
+
+int Game::getWidth() const {
+    return Width;
 }
 
 

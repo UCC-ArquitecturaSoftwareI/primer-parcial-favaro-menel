@@ -9,8 +9,8 @@
 
 class Game {
 private:
-    int Height = 600;
-    int Width = 1000;
+    float Height = 600;
+    float Width = 1000;
     SoundManager soundmanager;
     Renderer *render;
     Game();
@@ -22,5 +22,9 @@ public:
     void Loop();
 
     void UpdateDrawFrame();
+
+    int getHeight() const;
+
+    int getWidth() const;
 };
 #endif //RAYLIBTEMPLATE_GAME_H

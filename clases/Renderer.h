@@ -7,11 +7,11 @@
 #include "Car.h"
 #include "TextureManager.h"
 
-
 class Renderer {
 private:
     Map *map;
     Car *car;
+    Camera2D camera2D;
 public:
     Renderer();
 
@@ -24,6 +24,10 @@ public:
     void drawtext();
 
     void finish();
+
+    void camerainit();
+
+    void cameraend();
 
     Map *getMap();
 

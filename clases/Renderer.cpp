@@ -10,7 +10,10 @@ Renderer::Renderer() {
     BeginDrawing();
     auto &c = map->getLd()->getMap().getBackgroundColor();
     ClearBackground({c.r, c.g, c.b, c.a});
-    BeginMode2D(car->getCamera());
+    camera2D.rotation = 0.0f;
+    camera2D.zoom = 1.0f;
+    camera2D.offset = {500, 300};
+
 };
 
 /**
@@ -33,7 +36,7 @@ void Renderer::drawenemies() {
  * It draws the player.
  */
 void Renderer::drawplayer() {
-    DrawTexture(map->getLd()->getTexMan().search("player"), car->getpos().x, car->getpos().y, RAYWHITE);
+    DrawTextureEx(map->getLd()->getTexMan().search("player"),car->getpos(),0,0.5,RAYWHITE);
 }
 
 /**
@@ -54,11 +57,20 @@ void Renderer::finish() {
 /**
  * @return -> the map of the game.
  */
-Map *Renderer::getMap(){
+Map *Renderer::getMap() {
     return map;
 }
 
-Car *Renderer::getCar(){
+Car *Renderer::getCar() {
     return car;
+}
+
+void Renderer::camerainit() {
+    camera2D.target = car->getpos();
+    BeginMode2D(camera2D);
+}
+
+void Renderer::cameraend() {
+    EndMode2D();
 }
 

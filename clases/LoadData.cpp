@@ -6,7 +6,7 @@
  */
 Vector2 LoadData::LoadPlayer() {
     Vector2 player_pos;
-    tex_man.LoadTextures("resources/Cars/car_red_3.png", "player");
+    tex_man.LoadTextures("resources/Cars/car_black_4.png", "player");
     auto objs = map.getLayer("Cars");
     tson::Object *player = objs->firstObj("Player");
     player_pos.x = player->getPosition().x;
