@@ -6,8 +6,13 @@
  */
 Renderer::Renderer() {
     map = new Map;
-    enemies = new Enemies(*map->getLd());
-    player = new Player(*map->getLd());
+    int i = 0;
+    for (auto file: {"resources/Cars/car_black_4.png", "resources/Cars/car_blue_2.png",
+                     "resources/Cars/car_green_3.png", "resources/Cars/car_red_3.png",
+                     "resources/Cars/car_yellow_1.png"}) {
+        car[i] = CarFactory::createcar(*map->getLd(), file);
+        i++;
+    }
     BeginDrawing();
     auto &c = map->getLd()->getMap().getBackgroundColor();
     ClearBackground({c.r, c.g, c.b, c.a});
@@ -27,20 +32,12 @@ void Renderer::drawmap() {
 }
 
 /**
- * it draws the enemies.
+ * Draw all the cars in the window.
  */
-void Renderer::drawenemies() {
-    DrawTextureEx(map->getLd()->getTexMan().search("enemy1"),enemies->getpos()[0],0,0.5,RAYWHITE);
-    DrawTextureEx(map->getLd()->getTexMan().search("enemy2"),enemies->getpos()[1],0,0.5,RAYWHITE);
-    DrawTextureEx(map->getLd()->getTexMan().search("enemy3"),enemies->getpos()[2],0,0.5,RAYWHITE);
-    DrawTextureEx(map->getLd()->getTexMan().search("enemy4"),enemies->getpos()[3],0,0.5,RAYWHITE);
-}
-
-/**
- * It draws the player.
- */
-void Renderer::drawplayer() {
-    DrawTextureEx(map->getLd()->getTexMan().search("player"), player->getpos()[0], 0, 0.5, RAYWHITE);
+void Renderer::drawcar() {
+    for (int i = 0; i < 5; i++) {
+        DrawTextureEx(car[i]->getText2D(), car[i]->getCarPos(), 0, 0.5, RAYWHITE);
+    }
 }
 
 /**
@@ -65,17 +62,33 @@ Map *Renderer::getMap() {
     return map;
 }
 
-
+/**
+ *
+ */
 void Renderer::camerainit() {
-    camera2D.target = player->getpos()[0];
+    camera2D.target = car[0]->getCarPos();
     BeginMode2D(camera2D);
 }
 
+/**
+ *
+ */
 void Renderer::cameraend() {
     EndMode2D();
 }
 
-Enemies *Renderer::getEnemies() const {
-    return enemies;
+void Renderer::moveplayer() {
+    if (IsKeyDown(KEY_UP)) {
+        car[0]->setCarPos({car[0]->getCarPos().x, car[0]->getCarPos().y - car[0]->getSpeed()});
+    }
+    if (IsKeyDown(KEY_DOWN)) {
+        car[0]->setCarPos({car[0]->getCarPos().x, car[0]->getCarPos().y + car[0]->getSpeed()});
+    }
+    if (IsKeyDown(KEY_RIGHT)) {
+        car[0]->setCarPos({car[0]->getCarPos().x + car[0]->getSpeed(), car[0]->getCarPos().y});
+    }
+    if (IsKeyDown(KEY_LEFT)) {
+        car[0]->setCarPos({car[0]->getCarPos().x - car[0]->getSpeed(), car[0]->getCarPos().y});
+    }
 }
 

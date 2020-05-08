@@ -12,9 +12,11 @@ private:
 public:
     LoadData(std::string file);
 
-    Vector2 LoadPlayer();
+    void LoadCars(const std::string& file,const std::string& key);
 
-    std::vector<Vector2> LoadEnemies();
+    Vector2 Posplayer(const std::string& name);
+
+    Vector2 Posenemy(const std::string& name);
 
     Rectangle Loadline();
 

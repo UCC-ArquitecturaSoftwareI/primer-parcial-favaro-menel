@@ -10,9 +10,9 @@ class Car : public Entity {
 protected:
     int speed;
 public:
-    std::vector<Vector2> getpos() override;
+    virtual int getSpeed() =0;
 
-    virtual void movement() = 0;
+
 };
 
 

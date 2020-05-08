@@ -53,8 +53,8 @@ void Game::UpdateDrawFrame() {
     soundmanager.Rewind("game");
     render->camerainit();
     render->drawmap();
-    render->drawplayer();
-    render->drawenemies();
+    render->drawcar();
+    render->moveplayer();
     render->cameraend();
     render->finish();
 }

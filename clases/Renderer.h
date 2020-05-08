@@ -4,26 +4,24 @@
 #include <string>
 #include <raylib.h>
 #include "Map.h"
-#include "Enemies.h"
-#include "Jugador.h"
+#include "CarFactory.h"
 #include "TextureManager.h"
 
 class Renderer {
 private:
     Map *map;
-    Enemies *enemies;
-    Player *player;
+    Car *car[5];
     Camera2D camera2D;
 public:
     Renderer();
 
     void drawmap();
 
-    void drawplayer();
-
-    void drawenemies();
+    void drawcar();
 
     void drawtext();
+
+    void moveplayer();
 
     void finish();
 
@@ -32,8 +30,6 @@ public:
     void cameraend();
 
     Map *getMap();
-
-    Enemies *getEnemies() const;
 };
 
 #endif //RAYLIBTEMPLATE_RENDERER_H

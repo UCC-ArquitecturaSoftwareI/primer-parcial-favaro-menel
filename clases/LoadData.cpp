@@ -1,37 +1,39 @@
 #include "LoadData.h"
 
 /**
- * it loads the player data.
- * @return -> the initial position of the car's player.
+ * it loads the player texture.
  */
-Vector2 LoadData::LoadPlayer() {
+void LoadData::LoadCars(const std::string& file,const std::string& key) {
+    tex_man.LoadTextures(file, key);
+}
+/**
+ *  Initial position of the player
+ * @param name -> key name of Tiled.
+ * @return -> position of the player.
+ */
+Vector2 LoadData::Posplayer(const std::string &name) {
     Vector2 player_pos;
-    tex_man.LoadTextures("resources/Cars/car_black_4.png", "player");
     auto objs = map.getLayer("Cars");
-    tson::Object *player = objs->firstObj("Player");
+    tson::Object *player = objs->firstObj(name);
     player_pos.x = player->getPosition().x;
     player_pos.y = player->getPosition().y;
     return player_pos;
 }
-
 /**
- * Load enemies data.
- * @return -> Vector with initial positions of the enemies.
+ * Initial position of the enemy.
+ * @param name -> key name of Tiled.
+ * @return -> position of the enemy.
  */
-std::vector<Vector2> LoadData::LoadEnemies() {
-    std::vector<Vector2> enemy_pos;
-    tex_man.LoadTextures("resources/Cars/car_green_3.png", "enemy1");
-    tex_man.LoadTextures("resources/Cars/car_red_3.png","enemy2");
-    tex_man.LoadTextures("resources/Cars/car_blue_2.png","enemy3");
-    tex_man.LoadTextures("resources/Cars/car_yellow_1.png","enemy4");
+Vector2 LoadData::Posenemy(const std::string &name) {
+    Vector2 enemy_pos;
     auto objs = map.getLayer("Cars");
-    std::vector<tson::Object> enemies = objs->getObjectsByName("Enemy");
-    for (int i = 0; i < enemies.size(); i++) {
-        enemy_pos[i].x = enemies[i].getPosition().x;
-        enemy_pos[i].y = enemies[i].getPosition().y;
-    }
+    tson::Object *enemy = objs->firstObj(name);
+    enemy_pos.x = enemy->getPosition().x;
+    enemy_pos.y = enemy->getPosition().y;
     return enemy_pos;
-}
+};
+
+
 
 /**
  * It loads the line of the track
@@ -77,8 +79,12 @@ LoadData::LoadData(std::string file) {
     map = parser.parse(fs::path(file));
     if (map.getStatus() == tson::ParseStatus::OK) {
         for (auto &tileset : map.getTilesets()) {
-            tex_man.LoadTextures("../resources/Map/"  + tileset.getImage().string(), "map");
+            tex_man.LoadTextures("../resources/Map/" + tileset.getImage().string(), "map");
             map_tileset = &tileset;
         }
     }
-};
+}
+
+
+
+

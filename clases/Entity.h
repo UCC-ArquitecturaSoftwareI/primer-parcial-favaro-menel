@@ -2,14 +2,20 @@
 
 #ifndef RAYLIBTEMPLATE_ENTITY_H
 #define RAYLIBTEMPLATE_ENTITY_H
+
 #include <vector>
 
 class Entity {
 protected:
-    std::vector<Texture2D> text2D;
-    std::vector<Vector2> car_pos;
+    Texture2D text2D;
+    Vector2 car_pos;
 public:
-    virtual std::vector<Vector2> getpos() = 0;
+
+    virtual Texture2D &getText2D() = 0;
+
+    virtual Vector2 &getCarPos() = 0;
+
+    virtual void setCarPos(const Vector2 &carPos) = 0;
 };
 
 #endif //RAYLIBTEMPLATE_ENTITY_H

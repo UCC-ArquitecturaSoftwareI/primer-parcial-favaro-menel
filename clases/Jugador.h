@@ -5,8 +5,15 @@
 
 class Player: public Car{
 public:
-    Player(LoadData &ld);
+    Player(LoadData &ld,const std::string &name, const std::string &key);
 
-    void movement() override;
+    void setCarPos(const Vector2 &carPos) override;
+
+    Texture2D &getText2D() override;
+
+    Vector2 &getCarPos() override;
+
+
+    int getSpeed() override;
 };
 #endif //RAYLIBTEMPLATE_JUGADOR_H
