@@ -54,6 +54,7 @@ void Game::UpdateDrawFrame() {
     render->camerainit();
     render->drawmap();
     render->drawplayer();
+    render->drawenemies();
     render->cameraend();
     render->finish();
 }

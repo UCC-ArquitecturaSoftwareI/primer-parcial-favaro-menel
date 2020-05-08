@@ -4,13 +4,15 @@
 #include <string>
 #include <raylib.h>
 #include "Map.h"
-#include "Car.h"
+#include "Enemies.h"
+#include "Jugador.h"
 #include "TextureManager.h"
 
 class Renderer {
 private:
     Map *map;
-    Car *car;
+    Enemies *enemies;
+    Player *player;
     Camera2D camera2D;
 public:
     Renderer();
@@ -31,7 +33,7 @@ public:
 
     Map *getMap();
 
-    Car *getCar();
+    Enemies *getEnemies() const;
 };
 
 #endif //RAYLIBTEMPLATE_RENDERER_H

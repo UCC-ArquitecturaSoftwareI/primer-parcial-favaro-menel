@@ -6,7 +6,8 @@
  */
 Renderer::Renderer() {
     map = new Map;
-    car = new Car(*map->getLd());
+    enemies = new Enemies(*map->getLd());
+    player = new Player(*map->getLd());
     BeginDrawing();
     auto &c = map->getLd()->getMap().getBackgroundColor();
     ClearBackground({c.r, c.g, c.b, c.a});
@@ -29,14 +30,17 @@ void Renderer::drawmap() {
  * it draws the enemies.
  */
 void Renderer::drawenemies() {
-
+    DrawTextureEx(map->getLd()->getTexMan().search("enemy1"),enemies->getpos()[0],0,0.5,RAYWHITE);
+    DrawTextureEx(map->getLd()->getTexMan().search("enemy2"),enemies->getpos()[1],0,0.5,RAYWHITE);
+    DrawTextureEx(map->getLd()->getTexMan().search("enemy3"),enemies->getpos()[2],0,0.5,RAYWHITE);
+    DrawTextureEx(map->getLd()->getTexMan().search("enemy4"),enemies->getpos()[3],0,0.5,RAYWHITE);
 }
 
 /**
  * It draws the player.
  */
 void Renderer::drawplayer() {
-    DrawTextureEx(map->getLd()->getTexMan().search("player"),car->getpos(),0,0.5,RAYWHITE);
+    DrawTextureEx(map->getLd()->getTexMan().search("player"), player->getpos()[0], 0, 0.5, RAYWHITE);
 }
 
 /**
@@ -61,16 +65,17 @@ Map *Renderer::getMap() {
     return map;
 }
 
-Car *Renderer::getCar() {
-    return car;
-}
 
 void Renderer::camerainit() {
-    camera2D.target = car->getpos();
+    camera2D.target = player->getpos()[0];
     BeginMode2D(camera2D);
 }
 
 void Renderer::cameraend() {
     EndMode2D();
+}
+
+Enemies *Renderer::getEnemies() const {
+    return enemies;
 }
 

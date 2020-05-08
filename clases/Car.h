@@ -1,18 +1,18 @@
 #ifndef RAYLIBTEMPLATE_CAR_H
 #define RAYLIBTEMPLATE_CAR_H
+
 #include <raylib.h>
 #include <string>
 #include "Entity.h"
 #include "LoadData.h"
 
 class Car : public Entity {
-private:
+protected:
+    int speed;
 public:
-    Car(LoadData &ld);
+    std::vector<Vector2> getpos() override;
 
-
-    Vector2 getpos() override;
-
+    virtual void movement() = 0;
 };
 
 

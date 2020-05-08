@@ -20,7 +20,10 @@ Vector2 LoadData::LoadPlayer() {
  */
 std::vector<Vector2> LoadData::LoadEnemies() {
     std::vector<Vector2> enemy_pos;
-    tex_man.LoadTextures("resources/Cars/car_black_4.png", "enemy");
+    tex_man.LoadTextures("resources/Cars/car_green_3.png", "enemy1");
+    tex_man.LoadTextures("resources/Cars/car_red_3.png","enemy2");
+    tex_man.LoadTextures("resources/Cars/car_blue_2.png","enemy3");
+    tex_man.LoadTextures("resources/Cars/car_yellow_1.png","enemy4");
     auto objs = map.getLayer("Cars");
     std::vector<tson::Object> enemies = objs->getObjectsByName("Enemy");
     for (int i = 0; i < enemies.size(); i++) {
