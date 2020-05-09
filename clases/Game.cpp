@@ -13,7 +13,7 @@ Game &Game::get() {
  * Constructor of the class.
  */
 Game::Game() {
-    InitWindow(Width, Height, "raylib template - advance game");
+    InitWindow(Width, Height, "Cars - Reto Cruz del Eje");
     render = new Renderer;
     soundmanager.LoadSounds("../resources/Music/tokyo-drift-8-bit.mp3", "game");
     soundmanager.Play("game");
