@@ -7,9 +7,7 @@
 Renderer::Renderer() {
     map = new Map;
     int i = 0;
-    for (auto file: {"resources/Cars/car_black_small_4.png", "resources/Cars/car_blue_2.png",
-                     "resources/Cars/car_green_3.png", "resources/Cars/car_red_3.png",
-                     "resources/Cars/car_yellow_1.png"}) {
+    for (auto file: {"Player", "Enemy1", "Enemy2", "Enemy3", "Enemy4"}) {
         car[i] = CarFactory::createcar(*map->getLd(), file);
         i++;
     }
@@ -39,7 +37,7 @@ void Renderer::drawcar() {
         Rectangle sourceRec = {0.0f, 0.0f, c->getWidth(), c->getHeight()};
         Rectangle destRec = {c->getCarPos().x, c->getCarPos().y, c->getWidth(), c->getHeight()};
         Vector2 origin = {c->getWidth() / 2, c->getHeight() / 2};
-        DrawTexturePro(c->getText2D(), sourceRec, destRec, origin, c->getAngle(), RAYWHITE);
+        DrawTexturePro(c->getText2D(), sourceRec, destRec, origin, -c->getAngle(), RAYWHITE);
     }
 }
 
@@ -83,16 +81,16 @@ void Renderer::cameraend() {
 void Renderer::moveplayer() {
 
     if (IsKeyDown(KEY_W)) {
-        car[0]->aceleratey(-0.2);
+        car[0]->aceleratey(-1);
     }
     if (IsKeyDown(KEY_S)) {
-        car[0]->aceleratey(0.2);
+        car[0]->aceleratey(1);
     }
     if (IsKeyDown(KEY_D)) {
-        car[0]->aceleratex(0.2);
+        car[0]->aceleratex(1);
     }
     if (IsKeyDown(KEY_A)) {
-        car[0]->aceleratex(-0.2);
+        car[0]->aceleratex(-1);
     }
     car[0]->move();
 }

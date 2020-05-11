@@ -1,6 +1,6 @@
 #ifndef RAYLIBTEMPLATE_CAR_H
 #define RAYLIBTEMPLATE_CAR_H
-#define SPEED_MAX 2
+//#define SPEED_MAX 1
 
 #include <raylib.h>
 #include <string>
@@ -12,7 +12,8 @@ protected:
     Vector2 speed;
     float height;
     float width;
-    float angle;
+    float speed_max;
+    Vector2 aceleration;
 public:
     virtual Vector2 getSpeed() = 0;
 
@@ -22,9 +23,9 @@ public:
 
     float getAngle();
 
-    void aceleratex(float x);
+    void aceleratex(int x);
 
-    void aceleratey(float y);
+    void aceleratey(int y);
 
     void move() override;
 

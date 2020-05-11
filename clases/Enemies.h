@@ -5,7 +5,7 @@
 
 class Enemies : public Car {
 public:
-    Enemies(LoadData &ld, const std::string &name, const std::string &key);
+    Enemies(LoadData &ld, const std::string &name, const std::string &key,float sp_max,Vector2 acel);
 
     void setCarPos(const Vector2 &carPos) override;
 

@@ -6,7 +6,7 @@
 
 class CarFactory{
 public:
-    static  Car *createcar(LoadData &ld,const std::string& file);
+    static  Car *createcar(LoadData &ld,const std::string& key);
 };
 
 

@@ -4,13 +4,15 @@
 
 #include <cmath>
 
-Player::Player(LoadData &ld, const std::string &name, const std::string &key) {
+Player::Player(LoadData &ld, const std::string &name, const std::string &key, float sp_max, Vector2 acel) {
     ld.LoadCars(name, key);
     car_pos = ld.Posplayer(key);
     text2D = ld.getTexMan().search(key);
-    speed = {0,0};
+    speed = {0, 0};
     height = text2D.height;
     width = text2D.width;
+    speed_max = sp_max;
+    aceleration = acel;
 }
 
 

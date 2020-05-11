@@ -17,18 +17,18 @@ void Car::move() {
     }
 }
 
-void Car::aceleratex(float x) {
-    speed.x += x;
-    if (speed.x > SPEED_MAX) speed.x = SPEED_MAX;
-    if (speed.x < -SPEED_MAX) speed.x = -SPEED_MAX;
+void Car::aceleratex(int x) {
+    speed.x += (aceleration.x * x);
+    if (speed.x > speed_max) speed.x = speed_max;
+    if (speed.x < -speed_max) speed.x = -speed_max;
 }
 
-void Car::aceleratey(float y) {
-    speed.y += y;
-    if (speed.y > SPEED_MAX) speed.y = SPEED_MAX;
-    if (speed.y < -SPEED_MAX) speed.x = -SPEED_MAX;
+void Car::aceleratey(int y) {
+    speed.y += (aceleration.y * y);
+    if (speed.y > speed_max) speed.y = speed_max;
+    if (speed.y < -speed_max) speed.y = -speed_max;
 }
 
 float Car::getAngle() {
-    return atan(speed.x/speed.y)*180/M_PI;
+    return atan(speed.x / speed.y) * 180 / M_PI;
 }

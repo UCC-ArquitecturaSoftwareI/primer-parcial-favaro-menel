@@ -5,7 +5,7 @@
 
 class Player: public Car{
 public:
-    Player(LoadData &ld,const std::string &name, const std::string &key);
+    Player(LoadData &ld,const std::string &name, const std::string &key,float sp_max, Vector2 acel);
 
     void setCarPos(const Vector2 &carPos) override;
 
