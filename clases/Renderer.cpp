@@ -7,7 +7,7 @@
 Renderer::Renderer() {
     map = new Map;
     int i = 0;
-    for (auto file: {"resources/Cars/car_black_4.png", "resources/Cars/car_blue_2.png",
+    for (auto file: {"resources/Cars/car_black_small_4.png", "resources/Cars/car_blue_2.png",
                      "resources/Cars/car_green_3.png", "resources/Cars/car_red_3.png",
                      "resources/Cars/car_yellow_1.png"}) {
         car[i] = CarFactory::createcar(*map->getLd(), file);
@@ -19,7 +19,6 @@ Renderer::Renderer() {
     camera2D.rotation = 0.0f;
     camera2D.zoom = 1.0f;
     camera2D.offset = {500, 300};
-
 };
 
 /**
@@ -35,8 +34,12 @@ void Renderer::drawmap() {
  * Draw all the cars in the window.
  */
 void Renderer::drawcar() {
-    for (int i = 0; i < 5; i++) {
-        DrawTextureEx(car[i]->getText2D(), car[i]->getCarPos(), 0, 0.5, RAYWHITE);
+
+    for (auto c: car) {
+        Rectangle sourceRec = {0.0f, 0.0f, c->getWidth(), c->getHeight()};
+        Rectangle destRec = {c->getCarPos().x, c->getCarPos().y, c->getWidth(), c->getHeight()};
+        Vector2 origin = {c->getWidth() / 2, c->getHeight() / 2};
+        DrawTexturePro(c->getText2D(), sourceRec, destRec, origin, c->getAngle(), RAYWHITE);
     }
 }
 
@@ -63,7 +66,7 @@ Map *Renderer::getMap() {
 }
 
 /**
- *
+ * Start the camera2D.
  */
 void Renderer::camerainit() {
     camera2D.target = car[0]->getCarPos();
@@ -71,24 +74,26 @@ void Renderer::camerainit() {
 }
 
 /**
- *
+ * End the camera2D.
  */
 void Renderer::cameraend() {
     EndMode2D();
 }
 
 void Renderer::moveplayer() {
-    if (IsKeyDown(KEY_UP)) {
-        car[0]->setCarPos({car[0]->getCarPos().x, car[0]->getCarPos().y - car[0]->getSpeed()});
+
+    if (IsKeyDown(KEY_W)) {
+        car[0]->aceleratey(-0.2);
     }
-    if (IsKeyDown(KEY_DOWN)) {
-        car[0]->setCarPos({car[0]->getCarPos().x, car[0]->getCarPos().y + car[0]->getSpeed()});
+    if (IsKeyDown(KEY_S)) {
+        car[0]->aceleratey(0.2);
     }
-    if (IsKeyDown(KEY_RIGHT)) {
-        car[0]->setCarPos({car[0]->getCarPos().x + car[0]->getSpeed(), car[0]->getCarPos().y});
+    if (IsKeyDown(KEY_D)) {
+        car[0]->aceleratex(0.2);
     }
-    if (IsKeyDown(KEY_LEFT)) {
-        car[0]->setCarPos({car[0]->getCarPos().x - car[0]->getSpeed(), car[0]->getCarPos().y});
+    if (IsKeyDown(KEY_A)) {
+        car[0]->aceleratex(-0.2);
     }
+    car[0]->move();
 }
 

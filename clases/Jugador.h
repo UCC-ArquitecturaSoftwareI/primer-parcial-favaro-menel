@@ -13,7 +13,11 @@ public:
 
     Vector2 &getCarPos() override;
 
+    Vector2 getSpeed() override;
 
-    int getSpeed() override;
+    float getHeight() override;
+
+    float getWidth() override;
+
 };
 #endif //RAYLIBTEMPLATE_JUGADOR_H

@@ -16,6 +16,8 @@ public:
     virtual Vector2 &getCarPos() = 0;
 
     virtual void setCarPos(const Vector2 &carPos) = 0;
+
+    virtual void move() = 0;
 };
 
 #endif //RAYLIBTEMPLATE_ENTITY_H

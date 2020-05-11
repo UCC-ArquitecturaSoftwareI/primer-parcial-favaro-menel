@@ -13,7 +13,11 @@ public:
 
     Vector2 &getCarPos() override;
 
-    int getSpeed() override;
+    Vector2 getSpeed() override;
+
+    float getHeight() override;
+
+    float getWidth() override;
 };
 
 #endif //RAYLIBTEMPLATE_ENEMIES_H

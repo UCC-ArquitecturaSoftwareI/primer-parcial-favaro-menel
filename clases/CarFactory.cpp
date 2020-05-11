@@ -8,7 +8,7 @@
  * @return
  */
 Car *CarFactory::createcar(LoadData &ld, const std::string& file) {
-    if (file.find("/car_black_4.png") != std::string::npos)
+    if (file.find("/car_black_small_4.png") != std::string::npos)
         return new Player(ld,file,"Player");
     if (file.find("/car_blue_2.png") != std::string::npos)
         return new Enemies(ld,file,"Enemy1");
