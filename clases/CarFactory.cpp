@@ -1,6 +1,5 @@
-
-
 #include "CarFactory.h"
+
 /**
  *
  * @param ld

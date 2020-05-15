@@ -6,6 +6,8 @@
 void LoadData::LoadCars(const std::string& file,const std::string& key) {
     tex_man.LoadTextures(file, key);
 }
+
+
 /**
  *  Initial position of the player
  * @param name -> key name of Tiled.
@@ -19,6 +21,8 @@ Vector2 LoadData::Posplayer(const std::string &name) {
     player_pos.y = player->getPosition().y;
     return player_pos;
 }
+
+
 /**
  * Initial position of the enemy.
  * @param name -> key name of Tiled.

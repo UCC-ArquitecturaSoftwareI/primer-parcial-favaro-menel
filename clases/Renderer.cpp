@@ -17,7 +17,7 @@ Renderer::Renderer() {
     camera2D.rotation = 0.0f;
     camera2D.zoom = 1.0f;
     camera2D.offset = {500, 300};
-};
+}
 
 /**
  * It draws the map, tile by tile.
@@ -32,12 +32,11 @@ void Renderer::drawmap() {
  * Draw all the cars in the window.
  */
 void Renderer::drawcar() {
-
     for (auto c: car) {
         Rectangle sourceRec = {0.0f, 0.0f, c->getWidth(), c->getHeight()};
         Rectangle destRec = {c->getCarPos().x, c->getCarPos().y, c->getWidth(), c->getHeight()};
         Vector2 origin = {c->getWidth() / 2, c->getHeight() / 2};
-        DrawTexturePro(c->getText2D(), sourceRec, destRec, origin, -c->getAngle(), RAYWHITE);
+        DrawTexturePro(c->getText2D(), sourceRec, destRec, origin, c->getAngle(), RAYWHITE);
     }
 }
 
@@ -79,7 +78,6 @@ void Renderer::cameraend() {
 }
 
 void Renderer::moveplayer() {
-
     if (IsKeyDown(KEY_W)) {
         car[0]->aceleratey(-1);
     }

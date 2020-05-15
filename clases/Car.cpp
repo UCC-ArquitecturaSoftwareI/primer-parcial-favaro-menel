@@ -1,4 +1,5 @@
 #include "Car.h"
+#include <cmath>
 
 void Car::move() {
     car_pos.x += speed.x;
@@ -30,5 +31,5 @@ void Car::aceleratey(int y) {
 }
 
 float Car::getAngle() {
-    return atan(speed.x / speed.y) * 180 / M_PI;
+    return -(atan2(-speed.x,-speed.y) * 180 / M_PI);
 }
