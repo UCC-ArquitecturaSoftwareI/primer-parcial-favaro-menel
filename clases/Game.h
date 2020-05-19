@@ -14,6 +14,7 @@ private:
     SoundManager soundmanager;
     Renderer *render;
     Game();
+
 public:
     static Game &get();
 
@@ -27,4 +28,5 @@ public:
 
     int getWidth() const;
 };
+
 #endif //RAYLIBTEMPLATE_GAME_H

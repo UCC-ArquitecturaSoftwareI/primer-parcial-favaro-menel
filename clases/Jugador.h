@@ -3,9 +3,9 @@
 
 #include "Car.h"
 
-class Player: public Car{
+class Player : public Car {
 public:
-    Player(LoadData &ld,const std::string &name, const std::string &key,float sp_max, Vector2 acel);
+    Player(LoadData &ld, const std::string &name, const std::string &key, float sp_max, float acel);
 
     void setCarPos(const Vector2 &carPos) override;
 
@@ -13,11 +13,15 @@ public:
 
     Vector2 &getCarPos() override;
 
-    Vector2 getSpeed() override;
+    float getSpeed() override;
 
     float getHeight() override;
 
     float getWidth() override;
 
+
+    float getAceleration() override;
+
 };
+
 #endif //RAYLIBTEMPLATE_JUGADOR_H

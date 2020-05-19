@@ -5,7 +5,7 @@
 
 class Enemies : public Car {
 public:
-    Enemies(LoadData &ld, const std::string &name, const std::string &key,float sp_max,Vector2 acel);
+    Enemies(LoadData &ld, const std::string &name, const std::string &key,float sp_max,float acel);
 
     void setCarPos(const Vector2 &carPos) override;
 
@@ -13,11 +13,13 @@ public:
 
     Vector2 &getCarPos() override;
 
-    Vector2 getSpeed() override;
+    float getSpeed() override;
 
     float getHeight() override;
 
     float getWidth() override;
+
+    float getAceleration() override;
 };
 
 #endif //RAYLIBTEMPLATE_ENEMIES_H

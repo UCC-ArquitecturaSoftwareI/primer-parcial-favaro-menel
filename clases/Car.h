@@ -9,29 +9,30 @@
 
 class Car : public Entity {
 protected:
-    Vector2 speed;
+    float speed;
     float height;
     float width;
     float speed_max;
-    Vector2 aceleration;
+    float aceleration;
+    float rotation;
 public:
-    virtual Vector2 getSpeed() = 0;
+    virtual float getSpeed() = 0;
 
     virtual float getHeight() = 0;
 
     virtual float getWidth() = 0;
 
-    float getAngle();
+    virtual float getAceleration() = 0;
 
-    void aceleratex(int x);
+    float getRotation();
 
-    void aceleratey(int y);
+    void acelerate(float a);
 
-    void move() override;
+    void move(float d) override;
+
+    void rotate(float r) override;
 
 };
-
-
 
 
 #endif //RAYLIBTEMPLATE_CAR_H

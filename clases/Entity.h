@@ -17,7 +17,8 @@ public:
 
     virtual void setCarPos(const Vector2 &carPos) = 0;
 
-    virtual void move() = 0;
+    virtual void move(float d) = 0;
+    virtual void rotate(float r) =0;
 };
 
 #endif //RAYLIBTEMPLATE_ENTITY_H

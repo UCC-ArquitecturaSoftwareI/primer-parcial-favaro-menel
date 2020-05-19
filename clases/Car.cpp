@@ -1,35 +1,20 @@
 #include "Car.h"
 #include <cmath>
 
-void Car::move() {
-    car_pos.x += speed.x;
-    car_pos.y += speed.y;
-    if (speed.x > 0) {
-        speed.x -= 0.01;
-    }
-    if (speed.x < 0) {
-        speed.x += 0.01;
-    }
-    if (speed.y > 0) {
-        speed.y -= 0.01;
-    }
-    if (speed.y < 0) {
-        speed.y += 0.01;
-    }
+float Car::getRotation(){
+    return rotation;
+}
+void Car::move(float d) {
+    car_pos.x += d * std::sin(-rotation * M_PI / 180);
+    car_pos.y += d * std::cos(-rotation * M_PI / 180);
 }
 
-void Car::aceleratex(int x) {
-    speed.x += (aceleration.x * x);
-    if (speed.x > speed_max) speed.x = speed_max;
-    if (speed.x < -speed_max) speed.x = -speed_max;
+void Car::rotate(float r) {
+    rotation += r;
 }
 
-void Car::aceleratey(int y) {
-    speed.y += (aceleration.y * y);
-    if (speed.y > speed_max) speed.y = speed_max;
-    if (speed.y < -speed_max) speed.y = -speed_max;
-}
-
-float Car::getAngle() {
-    return -(atan2(-speed.x,-speed.y) * 180 / M_PI);
+void Car::acelerate(float a) {
+    speed += (aceleration * a);
+    if (speed > speed_max) speed = speed_max;
+    if (speed < -speed_max) speed = -speed_max;
 }

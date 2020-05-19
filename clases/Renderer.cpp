@@ -36,7 +36,7 @@ void Renderer::drawcar() {
         Rectangle sourceRec = {0.0f, 0.0f, c->getWidth(), c->getHeight()};
         Rectangle destRec = {c->getCarPos().x, c->getCarPos().y, c->getWidth(), c->getHeight()};
         Vector2 origin = {c->getWidth() / 2, c->getHeight() / 2};
-        DrawTexturePro(c->getText2D(), sourceRec, destRec, origin, c->getAngle(), RAYWHITE);
+        DrawTexturePro(c->getText2D(), sourceRec, destRec, origin, c->getRotation(), RAYWHITE);
     }
 }
 
@@ -78,18 +78,17 @@ void Renderer::cameraend() {
 }
 
 void Renderer::moveplayer() {
-    if (IsKeyDown(KEY_W)) {
-        car[0]->aceleratey(-1);
+    if (IsKeyDown(KEY_A)) {
+        car[0]->acelerate(-1);
+        car[0]->move(car[0]->getSpeed());
     }
     if (IsKeyDown(KEY_S)) {
-        car[0]->aceleratey(1);
+        car[0]->acelerate(1);
+        car[0]->move(car[0]->getSpeed());
     }
-    if (IsKeyDown(KEY_D)) {
-        car[0]->aceleratex(1);
-    }
-    if (IsKeyDown(KEY_A)) {
-        car[0]->aceleratex(-1);
-    }
-    car[0]->move();
+    if (IsKeyDown(KEY_LEFT)) car[0]->rotate(-3.0f);
+    if (IsKeyDown(KEY_RIGHT)) car[0]->rotate(3.0f);
+
+
 }
 

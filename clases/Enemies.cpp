@@ -2,15 +2,16 @@
 
 #include "Enemies.h"
 
-Enemies::Enemies(LoadData &ld, const std::string &name, const std::string &key, float sp_max, Vector2 acel) {
+Enemies::Enemies(LoadData &ld, const std::string &name, const std::string &key, float sp_max, float acel) {
     ld.LoadCars(name, key);
     car_pos = ld.Posenemy(key);
     text2D = ld.getTexMan().search(key);
-    speed = {1, 1};
+    speed = 1;
     height = text2D.height;
     width = text2D.width;
     speed_max = sp_max;
     aceleration = acel;
+    rotation = 0;
 }
 
 Texture2D &Enemies::getText2D() {
@@ -21,7 +22,7 @@ Vector2 &Enemies::getCarPos() {
     return car_pos;
 }
 
-Vector2 Enemies::getSpeed() {
+float Enemies::getSpeed() {
     return speed;
 }
 
@@ -35,5 +36,9 @@ float Enemies::getHeight() {
 
 float Enemies::getWidth() {
     return width;
+}
+
+float Enemies::getAceleration() {
+    return aceleration;
 }
 
