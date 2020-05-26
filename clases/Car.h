@@ -32,6 +32,8 @@ public:
 
     void rotate(float r) override;
 
+    void isCollidingcars(Car &cars);
+
 };
 
 

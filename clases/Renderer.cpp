@@ -88,7 +88,7 @@ void Renderer::moveplayer() {
     }
     if (IsKeyDown(KEY_LEFT)) car[0]->rotate(-3.0f);
     if (IsKeyDown(KEY_RIGHT)) car[0]->rotate(3.0f);
-
-
+    for (int i = 1; i < 5; i++)
+        car[0]->isCollidingcars(*car[i]);
 }
 

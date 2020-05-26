@@ -18,3 +18,14 @@ void Car::acelerate(float a) {
     if (speed > speed_max) speed = speed_max;
     if (speed < -speed_max) speed = -speed_max;
 }
+void Car::isCollidingcars(Car &cars) {
+    Rectangle cars_area;
+    cars_area.x = cars.getCarPos().x;
+    cars_area.y = cars.getCarPos().y;
+    cars_area.height = cars.getHeight();
+    cars_area.width = cars.getWidth();
+    if(CheckCollisionRecs({car_pos.x,car_pos.y,height,width}, cars_area)){
+        speed=0;
+        //Bajo la vida del jugador
+    }
+}

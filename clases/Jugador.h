@@ -19,8 +19,9 @@ public:
 
     float getWidth() override;
 
-
     float getAceleration() override;
+
+    void isCollidingcars(Car &cars);
 
 };
 
