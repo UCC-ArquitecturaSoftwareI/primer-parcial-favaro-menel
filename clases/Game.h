@@ -4,15 +4,10 @@
 #include <string>
 #include <raylib.h>
 #include <iostream>
-#include "SoundManager.h"
-#include "Renderer.h"
-
+#include "State.h"
+/*
 class Game {
 private:
-    float Height = 600;
-    float Width = 1000;
-    SoundManager soundmanager;
-    Renderer *render;
     Game();
 
 public:
@@ -28,5 +23,19 @@ public:
 
     int getWidth() const;
 };
+*/
+class Game: public State{
+private:
+    Game();
+public:
+    //static Game &get();
 
+    void playInit() = default;
+
+    void finish();
+
+    void Loop();
+
+    void UpdateDrawFrame();
+};
 #endif //RAYLIBTEMPLATE_GAME_H

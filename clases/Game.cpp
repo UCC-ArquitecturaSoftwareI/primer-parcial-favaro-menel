@@ -4,17 +4,19 @@
  * Function that returns the constructor.
  * @return -> object;
  */
+
+/*
 Game &Game::get() {
     static Game g;
     return g;
 }
-
+*/
 /**
  * Constructor of the class.
  */
 Game::Game() {
     InitWindow(Width, Height, "Cars - Reto Cruz del Eje");
-    render = new Renderer;
+    renderer = new Renderer;
     soundmanager.LoadSounds("../resources/Music/tokyo-drift-8-bit.mp3", "game");
     soundmanager.Play("game");
 }
@@ -24,7 +26,7 @@ Game::Game() {
  */
 void Game::finish() {
     soundmanager.Stop("game");
-    delete render;
+    delete renderer;
     soundmanager.finish();
     CloseWindow();
 }
@@ -51,21 +53,17 @@ void Game::Loop() {
  */
 void Game::UpdateDrawFrame() {
     soundmanager.Rewind("game");
-    render->camerainit();
-    render->drawmap();
-    render->drawcar();
-    render->moveplayer();
-    render->cameraend();
-    render->finish();
+    renderer->camerainit();
+    renderer->drawmap();
+    renderer->drawcar();
+    renderer->moveplayer();
+    renderer->cameraend();
+    renderer->finish();
 }
 
-int Game::getHeight() const {
-    return Height;
-}
 
-int Game::getWidth() const {
-    return Width;
-}
+
+
 
 
 
