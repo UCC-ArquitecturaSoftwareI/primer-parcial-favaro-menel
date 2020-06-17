@@ -1,9 +1,12 @@
 #include "Document.h"
-
-Document::Document(State &initialState) {
-    state = &initialState;
+/**
+ * Changes the actual state of the game.
+ * @param otherState -> new state.
+ */
+void Document::changeState(State &otherState) {
+    state = &otherState;
 }
 
-void Document::changeState(State otherState) {
-    state = &otherState;
+Document::Document() {
+
 }

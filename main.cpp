@@ -8,8 +8,8 @@
 
 int main() {
     State *estado;
+    Document documento;
 
-   // Document documento(estado->playInit());
+    documento.changeState(*estado);
 
-    //documento.changeState(estado->playGame());
 }

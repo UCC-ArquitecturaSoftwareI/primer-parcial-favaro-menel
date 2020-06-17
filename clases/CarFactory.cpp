@@ -1,9 +1,9 @@
 #include "CarFactory.h"
 
 /**
- *
- * @param ld
- * @param file
+ * It instances differents types of cars.
+ * @param ld -> it has all the data of the cars.
+ * @param key -> It is the Tiled's name of the car.
  * @return
  */
 Car *CarFactory::createcar(LoadData &ld, const std::string& key) {

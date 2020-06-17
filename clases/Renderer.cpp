@@ -76,7 +76,9 @@ void Renderer::camerainit() {
 void Renderer::cameraend() {
     EndMode2D();
 }
-
+/**
+ *  Render the movement of the player according the pressed keys.
+ */
 void Renderer::moveplayer() {
     if (IsKeyDown(KEY_A)) {
         car[0]->acelerate(-1);

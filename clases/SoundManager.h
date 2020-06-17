@@ -1,15 +1,25 @@
-//#include "../cmake-build-debug/_deps/raylib-src/src/raudio.h"
-
+/**
+ * @title       SoundManager class
+ * @file        SoundManager.h
+ * @version     1.0
+ * @date        6/04/2020
+ * @author      Angelo Menel
+ * @author      Juan Cruz Favaro
+ * @author      Emanuel Chiletti
+ */
 #ifndef RAYLIBTEMPLATE_SOUNDMANAGER_H
 #define RAYLIBTEMPLATE_SOUNDMANAGER_H
 
 #include <string>
 #include <raylib.h>
 #include <map>
-
+/**
+ * @class SoundManager
+ * @brief Tree with all Game's sounds.
+ */
 class SoundManager {
 private:
-    std::map<const std::string, Music> Soundtree;
+    std::map<const std::string, Music> Soundtree; /**std::map<const std::string , Music> value. Sounds tree with a string key*/
 
 public:
     SoundManager();

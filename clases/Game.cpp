@@ -1,9 +1,6 @@
 #include "Game.h"
 
-/**
- * Function that returns the constructor.
- * @return -> object;
- */
+
 
 /*
 Game &Game::get() {
@@ -59,6 +56,14 @@ void Game::UpdateDrawFrame() {
     renderer->moveplayer();
     renderer->cameraend();
     renderer->finish();
+}
+/**
+ * Function that returns the constructor.
+ * @return -> object;
+ */
+Game &Game::playGame() {
+    static Game g;
+    return g;
 }
 
 
