@@ -1,12 +1,12 @@
 ![Build and Deploy][badge]
 # Carreras de Autos
 ## Integrantes
-**Favaro Juan Cruz**
-**Menel Angelo**
+**Favaro Juan Cruz,**
+**Menel Angelo,**
 **Chiletti Emanuel**
 ## Descripción
-Este proyecto es una plantilla básica para crear proyectos en Raylib. Incluye github actions
-para deployear la versión HTML5 del juego en gh-pages del mismo repositorio.
+Arriba de una Saveiro negra, palanca al piso, chipeada y con turbo vas a poder correr
+para ganar respeto y demostrar quien es el mejor.
 
 Se puede ver desde: [Github Pages][gh-pages]
 
