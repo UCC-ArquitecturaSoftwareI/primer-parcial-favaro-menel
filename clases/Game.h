@@ -22,18 +22,16 @@
  * @class Game
  * @brief Inherited class of State
  */
-class Game: public State{
+class Game{
 private:
-    Game();                 /**Private Constructor of the Singleton class*/
+    Game();                /**Private Constructor of the Singleton class*/
+    SoundManager soundmanager;
+    Renderer *renderer;
 public:
-    static Game &playGame() override;
-
-    void playInit() = default;
+    static Game *get();
 
     void finish();
 
-    void Loop();
-
-    void UpdateDrawFrame();
+    int UpdateDrawFrame();
 };
 #endif //RAYLIBTEMPLATE_GAME_H

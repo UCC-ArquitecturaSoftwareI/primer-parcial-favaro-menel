@@ -11,23 +11,26 @@
 #ifndef RAYLIBTEMPLATE_STATE_H
 #define RAYLIBTEMPLATE_STATE_H
 
-#include "Renderer.h"
-#include "SoundManager.h"
-#include "Game.h"
+#include "Document.h"
+
 /**
  * @class State
  * @brief Abstract class of differents states of the game.
  */
 class State {
 protected:
-    Renderer *renderer;             /** Renderer value. Pointer to a Renderer object*/
-    float Height = 600;             /** float value. Window's height*/
-    float Width = 1000;             /** float value. Window's widht*/
-    SoundManager soundmanager;      /** SoundManager value. SoundManager object*/
+    Document *document;
 public:
-    State() = default;
-    virtual static Game &playGame() = 0;
-    virtual void playInit() = 0;
+    State() {};
+
+    virtual void Loop() = 0;
+
+    virtual ~State() {};
+
+    void setDocument(Document *d) {
+        document = d;
+    };
+
 };
 
 

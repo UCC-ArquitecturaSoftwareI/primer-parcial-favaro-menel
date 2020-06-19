@@ -11,12 +11,9 @@
 #ifndef RAYLIBTEMPLATE_DOCUMENT_H
 #define RAYLIBTEMPLATE_DOCUMENT_H
 
-#include "State.h"
 #include "menu.h"
+#include "State.h"
 
-/*In the context class, add a reference field of the state interface type
-        and a public setter that allows
-        overriding the value of that field.*/
 
 /**
  * @class Document
@@ -26,9 +23,11 @@ class Document {
 private:
     State *state;   /**State value. Pointer to a State object*/
 public:
-    Document();
+    Document(State *intial);
 
-    void changeState(State &otherState);
+    void changeState(State *otherState);
+
+    void Loop();
 };
 
 

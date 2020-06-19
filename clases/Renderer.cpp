@@ -11,7 +11,7 @@ Renderer::Renderer() {
         car[i] = CarFactory::createcar(*map->getLd(), file);
         i++;
     }
-    BeginDrawing();
+
     auto &c = map->getLd()->getMap().getBackgroundColor();
     ClearBackground({c.r, c.g, c.b, c.a});
     camera2D.rotation = 0.0f;
@@ -51,7 +51,6 @@ void Renderer::drawtext() {
  * It finishes the drawing.
  */
 void Renderer::finish() {
-    EndMode2D();
     EndDrawing();
 }
 
@@ -67,6 +66,7 @@ Map *Renderer::getMap() {
  */
 void Renderer::camerainit() {
     camera2D.target = car[0]->getCarPos();
+    BeginDrawing();
     BeginMode2D(camera2D);
 }
 

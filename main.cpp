@@ -1,5 +1,6 @@
 #include "clases/Document.h"
-#include "clases/State.h"
+#include "clases/menu.h"
+#include "clases/Play.h"
 
 
 /*#if defined(PLATFORM_WEB) // Para crear HTML5
@@ -7,9 +8,11 @@
 #endif*/
 
 int main() {
-    State *estado;
-    Document documento;
-
-    documento.changeState(*estado);
-
+    InitWindow(1000, 600, "Cars - Reto Cruz del Eje");
+    SetTargetFPS(60);
+    Document documento(new Play);
+    while (!WindowShouldClose()) {
+        documento.Loop();
+    }
+    CloseWindow();
 }
