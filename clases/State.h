@@ -11,7 +11,9 @@
 #ifndef RAYLIBTEMPLATE_STATE_H
 #define RAYLIBTEMPLATE_STATE_H
 
+class  Document;
 #include "Document.h"
+
 
 /**
  * @class State

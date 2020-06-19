@@ -16,7 +16,8 @@
 #include <string>
 #include <raylib.h>
 #include <iostream>
-#include "State.h"
+#include "SoundManager.h"
+#include "Renderer.h"
 
 /**
  * @class Game

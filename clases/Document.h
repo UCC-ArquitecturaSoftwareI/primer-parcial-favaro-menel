@@ -11,7 +11,8 @@
 #ifndef RAYLIBTEMPLATE_DOCUMENT_H
 #define RAYLIBTEMPLATE_DOCUMENT_H
 
-#include "menu.h"
+class  State;
+
 #include "State.h"
 
 

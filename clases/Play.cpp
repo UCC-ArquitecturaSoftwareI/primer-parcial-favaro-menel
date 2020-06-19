@@ -3,6 +3,7 @@
 //
 
 #include "Play.h"
+#include "menu.h"
 
 Play::Play() {
     game = Game::get();

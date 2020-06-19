@@ -10,7 +10,7 @@
 int main() {
     InitWindow(1000, 600, "Cars - Reto Cruz del Eje");
     SetTargetFPS(60);
-    Document documento(new Play);
+    Document documento(new menu);
     while (!WindowShouldClose()) {
         documento.Loop();
     }

@@ -31,21 +31,16 @@ int Game::UpdateDrawFrame() {
     renderer->moveplayer();
     renderer->cameraend();
     renderer->finish();
+
+    if (IsKeyDown(KEY_M)){
+        return 1;
+    }
     return 0;
 }
 
 Game *Game::get() {
     static Game g;
     return &g;
-}
-
-/**
- * Function that returns the constructor.
- * @return -> object;
- */
-Game &Game::playGame() {
-    static Game g;
-    return g;
 }
 
 
