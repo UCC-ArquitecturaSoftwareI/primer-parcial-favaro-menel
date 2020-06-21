@@ -89,6 +89,10 @@ LoadData::LoadData(std::string file) {
     }
 }
 
+void LoadData::LoadButtons(const std::string& file,const std::string& key) {
+    tex_man.LoadTextures(file, key);
+}
+
 
 
 

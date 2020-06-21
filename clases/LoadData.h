@@ -26,6 +26,8 @@ public:
 
     void LoadCars(const std::string& file,const std::string& key);
 
+    void LoadButtons(const std::string& file,const std::string& key);
+
     Vector2 Posplayer(const std::string& name);
 
     Vector2 Posenemy(const std::string& name);

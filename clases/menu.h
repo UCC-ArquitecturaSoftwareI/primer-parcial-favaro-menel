@@ -2,9 +2,12 @@
 #define RAYLIBTEMPLATE_MENU_H
 
 #include "State.h"
+#include "Strategybutton.h"
+
 
 class menu : public State {
 private:
+    Strategybutton *strbtn;
 public:
     menu();
 

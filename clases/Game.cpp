@@ -43,6 +43,10 @@ Game *Game::get() {
     return &g;
 }
 
+Renderer *Game::getRenderer() const {
+    return renderer;
+}
+
 
 
 

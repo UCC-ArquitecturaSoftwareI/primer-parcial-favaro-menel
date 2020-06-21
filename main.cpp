@@ -8,7 +8,7 @@
 #endif*/
 
 int main() {
-    InitWindow(1000, 600, "Cars - Reto Cruz del Eje");
+    InitWindow(1000, 600, "Tuned Cars - Reto en Carlos Paz");
     SetTargetFPS(60);
     Document documento(new menu);
     while (!WindowShouldClose()) {

@@ -34,5 +34,7 @@ public:
     void finish();
 
     int UpdateDrawFrame();
+
+    Renderer *getRenderer() const;
 };
 #endif //RAYLIBTEMPLATE_GAME_H
