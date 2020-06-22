@@ -1,6 +1,9 @@
 
 #include "Buttons.h"
 
+/**
+ * Starts button and its position
+ */
 Buttons::Buttons() {
     txt2d = LoadTexture("../resources/Buttons/bttn_use.png");
 
@@ -16,10 +19,18 @@ Buttons::Buttons() {
     btnstate = 0 ;
 }
 
+/**
+ * Draw Button
+ * @param vector
+ */
 void Buttons::drawstart(Vector2 vector) {
     DrawTextureRec(txt2d, button, vector, WHITE);
 }
 
+
+/**
+ * Detect collision
+ */
 void Buttons::checkcol() {
     mousePoint = GetMousePosition();
     setButton({400, 250,388,136});
@@ -33,14 +44,26 @@ void Buttons::checkcol() {
     setButton({0,0,384,130});
 }
 
+/**
+ *
+ * @return btnaction
+ */
 bool Buttons::isBtnaction(){
     return btnaction;
 }
 
+/**
+ * Set button
+ * @param button
+ */
 void Buttons::setButton(const Rectangle &button) {
     Buttons::button = button;
 }
 
+/**
+ *
+ * @return the state of the button
+ */
 int Buttons::getBtnstate(){
     return btnstate;
 }

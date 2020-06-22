@@ -38,11 +38,19 @@ int Game::UpdateDrawFrame() {
     return 0;
 }
 
+/**
+ *
+ * @return game singleton
+ */
 Game *Game::get() {
     static Game g;
     return &g;
 }
 
+/**
+ *
+ * @return renderer
+ */
 Renderer *Game::getRenderer() const {
     return renderer;
 }

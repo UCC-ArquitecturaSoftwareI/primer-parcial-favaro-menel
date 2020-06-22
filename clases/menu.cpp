@@ -1,11 +1,10 @@
 #include "menu.h"
 #include "Play.h"
 
-
+/**
+ * Draw initial screen
+ */
 void menu::Loop() {
-    /*if (IsKeyDown(KEY_L)) {
-        document->changeState(new Play);
-    }*/
     BeginDrawing();
     ClearBackground(WHITE);
     DrawText("Tuned Cars",400,100,60,BLACK);
@@ -18,14 +17,14 @@ void menu::Loop() {
         }
     }
 
-
     EndDrawing();
 }
 
-menu::~menu() {
+menu::~menu() {}
 
-}
-
+/**
+ * Change to a new button state
+ */
 menu::menu() {
     strbtn = new Strategybutton(0);
 }

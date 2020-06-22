@@ -23,15 +23,13 @@ class State {
 protected:
     Document *document;
 public:
-    State() {};
+    State();
 
     virtual void Loop() = 0;
 
-    virtual ~State() {};
+    virtual ~State();
 
-    void setDocument(Document *d) {
-        document = d;
-    };
+    void setDocument(Document *d);
 
 };
 

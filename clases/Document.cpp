@@ -11,11 +11,18 @@ void Document::changeState(State *otherState) {
     state->setDocument(this);
 }
 
+/**
+ * Set the initial state
+ * @param initial
+ */
 Document::Document(State *initial) {
     state = initial;
     state->setDocument(this);
 }
 
+/**
+ * Maintains the current state
+ */
 void Document::Loop() {
     state->Loop();
 }
