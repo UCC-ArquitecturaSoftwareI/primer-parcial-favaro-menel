@@ -2,6 +2,7 @@
 #define RAYLIBTEMPLATE_BUTTONS_H
 
 #include "raylib.h"
+#include "Strategy.h"
 
 class Buttons {
 private:
@@ -9,7 +10,8 @@ private:
     Texture2D txt2d;
     bool btnaction;
     Vector2 mousePoint;
-    int btnstate;
+    Strategy *animaci;
+
 public:
     Buttons();
 
@@ -21,7 +23,7 @@ public:
 
     int getBtnstate();
 
-    void drawstart (Vector2 vector);
+    void drawstart ();
 };
 
 

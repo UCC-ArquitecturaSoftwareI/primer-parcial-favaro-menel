@@ -7,14 +7,13 @@
 void menu::Loop() {
     BeginDrawing();
     ClearBackground(WHITE);
-    DrawText("Tuned Cars",320,100,60,BLACK);
-    DrawText("Reto en Carlos Paz",320,200,40,BLACK);
-    strbtn->getBtn()->checkcol();
-    strbtn->strategies();
-    if(strbtn->getBtn()->getBtnstate() == 2){
-        if (strbtn->getBtn()->isBtnaction()){
-            document->changeState(new Play);
-        }
+    DrawText("Tuned Cars", 320, 100, 60, BLACK);
+    DrawText("Reto en Carlos Paz", 320, 200, 40, BLACK);
+    strbtn->checkcol();
+    strbtn->drawstart();
+
+    if (strbtn->isBtnaction()) {
+        document->changeState(new Play);
     }
 
     EndDrawing();
@@ -26,5 +25,5 @@ menu::~menu() {}
  * Change to a new button state
  */
 menu::menu() {
-    strbtn = new Strategybutton(0);
+    strbtn = new Buttons();
 }

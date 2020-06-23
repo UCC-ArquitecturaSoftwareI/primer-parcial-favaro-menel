@@ -7,7 +7,7 @@
 
 class menu : public State {
 private:
-    Strategybutton *strbtn;
+    Buttons *strbtn;
 public:
     menu();
 

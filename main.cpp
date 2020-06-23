@@ -3,9 +3,9 @@
 #include "clases/Play.h"
 
 
-/*#if defined(PLATFORM_WEB) // Para crear HTML5
+#if defined(PLATFORM_WEB) // Para crear HTML5
 #include <emscripten/emscripten.h>
-#endif*/
+#endif
 
 int main() {
     InitWindow(1000, 600, "Tuned Cars - Reto en Carlos Paz");
